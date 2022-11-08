@@ -17,7 +17,7 @@ struct Calculate {
         self.number = number
     }
     
-    mutating func performCalculate(n2: Double) -> Double? {
+    mutating func performCalculate(n2: Double) -> Double {
         if let number1 = interNumber?.n1, let calculation = interNumber?.sybol {
             switch calculation {
                 case "+":
@@ -31,14 +31,15 @@ struct Calculate {
             default:
                 return n2
             }
-            interNumber = nil
         }
-        return nil
+        return n2
     }
     
     mutating func calculator(calMethod: String) -> Double? {
-        if let numValue = number {
+        if let numValue = number { //  9/9
             switch calMethod {
+            case "AC":
+                return 0
             case "+/-":
                 return numValue * -1
             case "%":

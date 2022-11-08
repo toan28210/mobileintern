@@ -6,10 +6,18 @@
 //
 
 import UIKit
+protocol SomeProtocol: Equatable {}
 
 class CalculateViewController: UIViewController {
 
     @IBOutlet weak var displayLabel: UILabel!
+    
+    @IBOutlet weak var plusBtn: UIButton!
+    @IBOutlet weak var minusBtn: UIButton!
+    @IBOutlet weak var multiBtn: UIButton!
+    @IBOutlet weak var diviBtn: UIButton!
+    @IBOutlet weak var acBtn: UIButton!
+    @IBOutlet weak var equaBtn: UIButton!
     
     var isFinishedTypingNumber: Bool = true
     var isTypingcomma: Bool = true
@@ -23,39 +31,47 @@ class CalculateViewController: UIViewController {
         }
         set {
             displayLabel.text = String(newValue)
+            updateLabel()
         }
     }
     var calculate = Calculate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addUIButton()
     }
-    
-    @IBAction func removeHandle(_ sender: UIButton) {
-        displayLabel.text = "0"
-    }
-    
-    
     
     @IBAction func calHandle(_ sender: UIButton) {
         isFinishedTypingNumber = true
         isTypingcomma = true
+        addUIButton()
+        if sender.tag <= 3 {
+            animationButton(sender)
+        }
         if let calMethod = sender.titleLabel?.text {
             calculate.SetNumber(displayValue)
             if let value = calculate.calculator(calMethod: calMethod) {
-                displayValue = value
+                if floor(value) == value {
+                    let intNumber = Int(value)
+                    displayLabel.text = String(intNumber)
+                } else {
+                    displayValue = value
+                }
             }
             
         }
+        updateLabel()
+        updateUIAC()
     }
     
     @IBAction func numButtonHandle(_ sender: UIButton) {
+        guard let text = displayLabel.text else {
+            return
+        }
         if let num = sender.titleLabel?.text {
-            
             if isFinishedTypingNumber {
                 if num == "." {
-                    displayLabel.text = displayLabel.text! + num
+                    displayLabel.text = text + num
                 } else {
                     displayLabel.text = num
                 }
@@ -65,16 +81,57 @@ class CalculateViewController: UIViewController {
                     if isTypingcomma {
                         isTypingcomma = false
                     }
-                    let isInt = floor(displayValue) == displayValue
-                    if !isInt {
+                    if text.contains(".") {
                         return
                     }
                 }
-                displayLabel.text = displayLabel.text! + num
+                if let intNum = Int(text + num) {
+                    displayLabel.text = String(intNum)
+                } else {
+                    displayLabel.text = text + num
+                }
                 
+            }
+        }
+        updateLabel()
+        updateUIAC()
+        addUIButton()
+    }
+    func updateUIAC() {
+        if displayValue != 0 {
+            acBtn.titleLabel?.text = "C"
+        } else {
+            acBtn.titleLabel?.text = "AC"
+        }
+    }
+    
+    func updateLabel() {
+        if let number = displayLabel.text {
+            if number.count >= 7 {
+                displayLabel.font = UIFont.systemFont(ofSize: 40)
+            } else {
+                displayLabel.font = UIFont.systemFont(ofSize: 80)
             }
         }
     }
     
-
+    func addUIButton() {
+        customButton(diviBtn)
+        customButton(multiBtn)
+        customButton(minusBtn)
+        customButton(plusBtn)
+        customButton(equaBtn)
+    }
+    
+    func customButton(_ button: UIButton){
+        button.backgroundColor = UIColor(cgColor: CGColor(red: 242/255, green: 147/255, blue: 59/255, alpha: 1))
+        button.layer.cornerRadius = button.frame.width/2
+        button.tintColor = .white
+    }
+    
+    func animationButton(_ viewToAnimation: UIButton) {
+        viewToAnimation.backgroundColor = .white
+        viewToAnimation.tintColor = UIColor(cgColor: CGColor(red: 242/255, green: 147/255, blue: 59/255, alpha: 1))
+    }
+    
 }
