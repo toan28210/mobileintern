@@ -7,10 +7,21 @@
 
 import UIKit
 
+@objc protocol CustomTextFieldScreenDelegate: AnyObject {
+   @objc optional func floatingTextFieldRightViewClick(_ textField: UITextField)
+}
 
-class CustomTextFieldScreen1: UITextField {
-    
+
+
+class CustomTextFieldScreen1: UITextField, UITextFieldDelegate {
+    public var txtDelegate: CustomTextFieldScreenDelegate?
     var leftPaddingIcon: CGFloat = 0
+    
+    @IBOutlet
+    public var CustomTextFieldScreenDelegate: AnyObject? {
+        get { return delegate as AnyObject }
+        set { txtDelegate = newValue as? CustomTextFieldScreenDelegate }
+    }
     
     var textPadding = UIEdgeInsets(
             top: 0,
@@ -66,6 +77,7 @@ class CustomTextFieldScreen1: UITextField {
 extension CustomTextFieldScreen1 {
     func updateRightView() {
         if let image = rightImage {
+            self.delegate = self
             let btnRightView = UIButton(frame: CGRect(
                 x: 0.0,
                 y: 0,
@@ -74,10 +86,31 @@ extension CustomTextFieldScreen1 {
             ))
             
             btnRightView.setImage(image, for: .normal)
+            btnRightView.setImage(UIImage(systemName: "eye.slash"), for: .selected)
             
             self.rightViewMode = .always
             self.rightView = btnRightView
+            
+            btnRightView.addTarget(
+                self,
+                action: #selector(self.rightViewButtonClick(_:)),
+                for: .touchUpInside
+            )
         }
+        
+    }
+    
+    @objc func rightViewButtonClick(_ sender : UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            self.isSecureTextEntry = false
+        } else {
+            self.isSecureTextEntry = true
+        }
+//        guard let delegate = self.txtDelegate else {
+//            return
+//        }
+//        _ = delegate.floatingTextFieldRightViewClick?(self)
         
     }
     
@@ -94,3 +127,4 @@ extension CustomTextFieldScreen1 {
             return rect.inset(by: textPadding)
         }
 }
+

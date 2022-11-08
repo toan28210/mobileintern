@@ -8,6 +8,24 @@
 import UIKit
 
 class LoginScreen3ViewController: UIViewController {
+    
+    let userDefault = UserDefaults.standard
+    var email: String {
+        get {
+            guard let email = emailTxt.text else {
+                return ""
+            }
+            return email
+        }
+    }
+    var pass: String {
+        get {
+            guard let pass = passTxt.text else {
+                return ""
+            }
+            return pass
+        }
+    }
 
     @IBOutlet weak var loginWithLKView: UIView!
     @IBOutlet weak var loginWithInTaView: UIView!
@@ -20,6 +38,9 @@ class LoginScreen3ViewController: UIViewController {
     let validation = ValidationTextField()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkboxRemember()
+        
         customTxt(txt: emailTxt)
         customTxt(txt: passTxt)
         //shadow view
@@ -29,6 +50,9 @@ class LoginScreen3ViewController: UIViewController {
         customShadowView(view: loginWithLKView)
         
         loginBtn.isEnabled = false
+        
+        rememberBtn.setImage(UIImage(named: "img-uncheck-image"), for: .normal)
+        rememberBtn.setImage(UIImage(named: "img-check-image"), for: .selected)
         
     }
     func customTxt(txt: UITextField) {
@@ -73,11 +97,34 @@ class LoginScreen3ViewController: UIViewController {
         }
     }
 
-    @IBAction func rememberPassword(_ sender: Any) {
+    @IBAction func rememberPassword(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+    @IBAction func handleLogin(_ sender: UIButton) {
+        checkRememberClickLogin()
+        print("login")
+        
+//        userDefault.set(email, forKey: "email")
+//        let homeVC = HomeViewController()
+//        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    func checkboxRemember() {
+        if let emailRemember = userDefault.string(forKey: "emailRemember"), let passRemember = userDefault.string(forKey: "passRemember") {
+            emailTxt.text = emailRemember
+            passTxt.text = passRemember
+            rememberBtn.isSelected = !rememberBtn.isSelected
+        }
         
     }
-    @IBAction func handleLogin(_ sender: Any) {
-        print("Login")
+    func checkRememberClickLogin() {
+        if rememberBtn.isSelected {
+            userDefault.set(email, forKey: "emailRemember")
+            userDefault.set(pass, forKey: "passRemember")
+        } else {
+            userDefault.removeObject(forKey: "emailRemember")
+            userDefault.removeObject(forKey: "passRemember")
+        }
     }
     
 }

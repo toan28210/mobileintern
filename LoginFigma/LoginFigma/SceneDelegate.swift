@@ -17,9 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        let login = LoginViewController()
-        
-        window?.rootViewController = login
+        let login = LoginScreenOneViewController()
+        let navigation = UINavigationController(rootViewController: login)
+        navigation.isNavigationBarHidden = true
+        window?.rootViewController = navigation
         window?.makeKeyAndVisible()
         
     }

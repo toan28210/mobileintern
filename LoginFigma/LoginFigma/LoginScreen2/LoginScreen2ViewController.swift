@@ -1,24 +1,24 @@
 //
-//  LoginScreenOneViewController.swift
+//  LoginScreen2ViewController.swift
 //  LoginFigma
 //
-//  Created by Toan Tran on 31/10/2022.
+//  Created by Toan Tran on 08/11/2022.
 //
 
 import UIKit
 
-class LoginScreenOneViewController: UIViewController {
-    @IBOutlet weak var loginAction: UILabel!
-    @IBOutlet weak var emailTxt: CustomTextFieldScreen1!
-    @IBOutlet weak var passwordTxt: CustomTextFieldScreen1!
-    @IBOutlet weak var loginBtn: UIButton!
+class LoginScreen2ViewController: UIViewController {
+
+    @IBOutlet weak var emailTextField: BaseTextField!
     @IBOutlet weak var rememberBtn: UIButton!
-    
-    let userDefault = UserDefaults.standard
-    
+    @IBOutlet weak var passTxt: BaseTextField!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var upImage: UIImageView!
+    @IBOutlet weak var belowImageView: UIImageView!
     var email: String {
         get {
-            guard let email = emailTxt.text else {
+            guard let email = emailTextField.text else {
                 return ""
             }
             return email
@@ -27,7 +27,7 @@ class LoginScreenOneViewController: UIViewController {
     
     var pass: String {
         get {
-            guard let pass = passwordTxt.text else {
+            guard let pass = passTxt.text else {
                 return ""
             }
             return pass
@@ -36,27 +36,21 @@ class LoginScreenOneViewController: UIViewController {
     
     var validation = ValidationTextField()
     
+    let userDefault = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBorderButton()
+        
         checkboxRemember()
+        
+        loginBtn.isEnabled = false
         
         rememberBtn.setImage(UIImage(named: "img-uncheck-image"), for: .normal)
         rememberBtn.setImage(UIImage(named: "img-check-image"), for: .selected)
     }
     
-    func addBorderButton() {
-        loginAction.addBottomBorderWithColor(color: UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1), width: 2)
-        emailTxt.addBottomBorderWithColor(color: UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha: 1), width: 2)
-        passwordTxt.addBottomBorderWithColor(color: UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha: 1), width: 2)
-    }
-    
-    @IBAction func handleLogin(_ sender: UIButton) {
-        checkRememberClickLogin()
-        print("login")
-    }
     @IBAction func changeEmail(_ sender: Any) {
-        if let email = emailTxt.text {
+        if let email = emailTextField.text {
             if validation.invalidEmail(email){
                 loginBtn.isEnabled = true
             } else {
@@ -65,8 +59,9 @@ class LoginScreenOneViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func changePass(_ sender: Any) {
-        if let password = passwordTxt.text {
+        if let password = passTxt.text {
             if validation.invalidPassword(password){
                 loginBtn.isEnabled = true
             } else {
@@ -79,14 +74,18 @@ class LoginScreenOneViewController: UIViewController {
     @IBAction func rememberPassword(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
     }
-    
     func checkboxRemember() {
         if let emailRemember = userDefault.string(forKey: "emailRemember"), let passRemember = userDefault.string(forKey: "passRemember") {
-            emailTxt.text = emailRemember
-            passwordTxt.text = passRemember
+            emailTextField.text = emailRemember
+            passTxt.text = passRemember
             rememberBtn.isSelected = !rememberBtn.isSelected
         }
         
+    }
+
+    @IBAction func hanleLogin(_ sender: Any) {
+        checkRememberClickLogin()
+        print("Login Success")
     }
     func checkRememberClickLogin() {
         if rememberBtn.isSelected {
@@ -99,5 +98,5 @@ class LoginScreenOneViewController: UIViewController {
     }
     
     
-}
 
+}
