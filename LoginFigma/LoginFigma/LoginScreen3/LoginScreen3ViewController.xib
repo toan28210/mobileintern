@@ -422,10 +422,10 @@
     </objects>
     <designables>
         <designable name="A31-cP-ESX">
-            <size key="intrinsicContentSize" width="91.333333333333329" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="135.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="SAV-bt-r5g">
-            <size key="intrinsicContentSize" width="62.333333333333336" height="17"/>
+            <size key="intrinsicContentSize" width="106.33333333333333" height="17"/>
         </designable>
     </designables>
     <resources>

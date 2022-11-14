@@ -88,7 +88,6 @@ class LoginScreen3ViewController: UIViewController {
     @IBAction func handleLogin(_ sender: UIButton) {
         checkRememberClickLogin()
         print("login")
-        
 //        userDefault.set(email, forKey: "email")
 //        let homeVC = HomeViewController()
 //        self.navigationController?.pushViewController(homeVC, animated: true)

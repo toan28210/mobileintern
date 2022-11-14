@@ -8,11 +8,11 @@
 import UIKit
 
 class LoginScreenOneViewController: UIViewController {
-    @IBOutlet weak var loginAction: UILabel!
-    @IBOutlet weak var emailTxt: CustomTextFieldScreen1!
-    @IBOutlet weak var passwordTxt: CustomTextFieldScreen1!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var rememberBtn: UIButton!
+    @IBOutlet weak private var loginAction: UILabel!
+    @IBOutlet weak private var emailTxt: CustomTextFieldScreen1!
+    @IBOutlet weak private var passwordTxt: CustomTextFieldScreen1!
+    @IBOutlet weak private var loginBtn: UIButton!
+    @IBOutlet weak private var rememberBtn: UIButton!
     
     @IBOutlet weak var lbLogoLogin: UILabel!
     let userDefault = UserDefaults.standard
