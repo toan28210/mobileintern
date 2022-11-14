@@ -38,6 +38,9 @@ class CalculateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
         addUIButton()
     }
     
@@ -99,10 +102,20 @@ class CalculateViewController: UIViewController {
     }
     func updateUIAC() {
         if displayValue != 0 {
-            acBtn.titleLabel?.text = "C"
+            acBtn.setTitle("C", for: .normal)
+            if let attrFont = UIFont(name: "Helvetica", size: 35) {
+                        let attrTitle = NSAttributedString(string: "C", attributes: [NSAttributedString.Key.font: attrFont])
+                        acBtn.setAttributedTitle(attrTitle, for: UIControl.State.normal)
+            }
         } else {
-            acBtn.titleLabel?.text = "AC"
+            acBtn.setTitle("AC", for: .normal)
+            if let attrFont = UIFont(name: "Helvetica", size: 35) {
+                        let attrTitle = NSAttributedString(string: "AC", attributes: [NSAttributedString.Key.font: attrFont])
+                        acBtn.setAttributedTitle(attrTitle, for: UIControl.State.normal)
+            }
+
         }
+       
     }
     
     func updateLabel() {
@@ -125,7 +138,7 @@ class CalculateViewController: UIViewController {
     
     func customButton(_ button: UIButton){
         button.backgroundColor = UIColor(cgColor: CGColor(red: 242/255, green: 147/255, blue: 59/255, alpha: 1))
-        button.layer.cornerRadius = button.frame.width/2
+        button.layer.cornerRadius = button.frame.size.width/2
         button.tintColor = .white
     }
     

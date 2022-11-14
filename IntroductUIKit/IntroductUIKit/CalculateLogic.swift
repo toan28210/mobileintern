@@ -40,6 +40,8 @@ struct Calculate {
             switch calMethod {
             case "AC":
                 return 0
+            case "C":
+                return 0
             case "+/-":
                 return numValue * -1
             case "%":
