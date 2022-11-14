@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F1C7B7729125355000365AB /* ValidationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C7B7629125355000365AB /* ValidationTextField.swift */; };
 		2F1C7B7929125666000365AB /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1C7B7829125666000365AB /* CheckBox.swift */; };
+		2F2592572922313D00E8AA4B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2592562922313D00E8AA4B /* CustomView.swift */; };
 		2F5B96D7290FC8340025A957 /* LoginScreenOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B96D5290FC8340025A957 /* LoginScreenOneViewController.swift */; };
 		2F5B96D8290FC8340025A957 /* LoginScreenOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F5B96D6290FC8340025A957 /* LoginScreenOneViewController.xib */; };
 		2F5B96DA290FC8870025A957 /* CustomTextFieldScreen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B96D9290FC8870025A957 /* CustomTextFieldScreen1.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		2F1C7B7629125355000365AB /* ValidationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextField.swift; sourceTree = "<group>"; };
 		2F1C7B7829125666000365AB /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		2F2592562922313D00E8AA4B /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		2F5B96D5290FC8340025A957 /* LoginScreenOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenOneViewController.swift; sourceTree = "<group>"; };
 		2F5B96D6290FC8340025A957 /* LoginScreenOneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginScreenOneViewController.xib; sourceTree = "<group>"; };
 		2F5B96D9290FC8870025A957 /* CustomTextFieldScreen1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldScreen1.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				2FCDF7D62910F4360067B659 /* LoginScreen3ViewController.xib */,
 				2F1C7B7629125355000365AB /* ValidationTextField.swift */,
 				2F1C7B7829125666000365AB /* CheckBox.swift */,
+				2F2592562922313D00E8AA4B /* CustomView.swift */,
 			);
 			path = LoginScreen3;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				2F1C7B7929125666000365AB /* CheckBox.swift in Sources */,
 				2F5B96D7290FC8340025A957 /* LoginScreenOneViewController.swift in Sources */,
 				2F9A66E3291A31C4008B0658 /* LoginScreen2ViewController.swift in Sources */,
+				2F2592572922313D00E8AA4B /* CustomView.swift in Sources */,
 				2FCDF7D72910F4360067B659 /* LoginScreen3ViewController.swift in Sources */,
 				2FCDF7D12910D0EF0067B659 /* CustomViewBorder.swift in Sources */,
 				2F5B96DA290FC8870025A957 /* CustomTextFieldScreen1.swift in Sources */,

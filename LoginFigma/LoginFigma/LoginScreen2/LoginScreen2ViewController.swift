@@ -16,6 +16,7 @@ class LoginScreen2ViewController: UIViewController {
     @IBOutlet weak private var contentView: UIView!
     @IBOutlet weak private var upImage: UIImageView!
     @IBOutlet weak private var belowImageView: UIImageView!
+    @IBOutlet weak private var scrollViewLogin: UIScrollView!
     var email: String {
         get {
             guard let email = emailTextField.text else {
@@ -43,6 +44,8 @@ class LoginScreen2ViewController: UIViewController {
         checkboxRemember()
         setImageButton()
     }
+    
+
     
     @IBAction func changeEmail(_ sender: Any) {
         if let email = emailTextField.text {

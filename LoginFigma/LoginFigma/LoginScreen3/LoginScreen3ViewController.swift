@@ -27,52 +27,37 @@ class LoginScreen3ViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var loginWithLKView: UIView!
-    @IBOutlet weak var loginWithInTaView: UIView!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var loginWithFBView: UIView!
-    @IBOutlet weak var emailTxt: BaseTextField!
-    @IBOutlet weak var passTxt: BaseTextField!
-    @IBOutlet weak var rememberBtn: UIButton!
+    @IBOutlet weak private var loginWithLKView: UIView!
+    @IBOutlet weak private var loginWithInTaView: UIView!
+    @IBOutlet weak private var loginBtn: UIButton!
+    @IBOutlet weak private var loginWithFBView: UIView!
+    @IBOutlet weak private var emailTxt: BaseTextField!
+    @IBOutlet weak private var passTxt: BaseTextField!
+    @IBOutlet weak private var rememberBtn: UIButton!
     
     let validation = ValidationTextField()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         checkboxRemember()
-        
-        customTxt(txt: emailTxt)
-        customTxt(txt: passTxt)
-        //shadow view
-        
-        customShadowView(view: loginWithFBView)
-        customShadowView(view: loginWithInTaView)
-        customShadowView(view: loginWithLKView)
-        
-        loginBtn.isEnabled = false
-        
-        rememberBtn.setImage(UIImage(named: "img-uncheck-image"), for: .normal)
-        rememberBtn.setImage(UIImage(named: "img-check-image"), for: .selected)
-        
-    }
-    func customTxt(txt: UITextField) {
-        txt.layer.borderWidth = 1
-        txt.layer.cornerRadius = 21
-        txt.layer.shadowRadius = 10
-        txt.layer.shadowOffset = CGSize(width: 0, height: 2)
-        txt.layer.shadowOpacity = 0.5
-        txt.layer.shadowColor = UIColor.gray.cgColor
-        txt.layer.shadowPath = UIBezierPath(rect: txt.bounds).cgPath
-    }
-    func customShadowView(view: UIView) {
-        view.layer.cornerRadius = 17
-        view.layer.shadowRadius = 10
-        view.layer.shadowOffset = CGSize(width: 0, height: 2)
-        view.layer.shadowOpacity = 0.5
-        view.layer.shadowColor = UIColor.gray.cgColor
-        view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
+        setImageBtn()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        addShadowView()
+    }
+    func setImageBtn() {
+        rememberBtn.setImage(UIImage(named: "img-uncheck-image"), for: .normal)
+        rememberBtn.setImage(UIImage(named: "img-check-image"), for: .selected)
+    }
+    func addShadowView(){
+        loginWithFBView.customShadowView(borderWith: 0, radius: 17)
+        loginWithInTaView.customShadowView(borderWith: 0, radius: 17)
+        loginWithLKView.customShadowView(borderWith: 0,radius: 17)
+        emailTxt.customShadowView(borderWith: 1, radius: 21)
+        passTxt.customShadowView(borderWith: 1, radius: 21)
+        
+    }
     //Validation
     @IBAction func changeEmail(_ sender: Any) {
         if let email = emailTxt.text {
@@ -114,6 +99,7 @@ class LoginScreen3ViewController: UIViewController {
             emailTxt.text = emailRemember
             passTxt.text = passRemember
             rememberBtn.isSelected = !rememberBtn.isSelected
+            loginBtn.isEnabled = true
         }
         
     }

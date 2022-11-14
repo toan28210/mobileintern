@@ -15,6 +15,7 @@
                 <outlet property="loginBtn" destination="vLv-mn-adV" id="5JN-YJ-AvD"/>
                 <outlet property="passTxt" destination="D0U-Wq-qZA" id="UEm-Jp-jp4"/>
                 <outlet property="rememberBtn" destination="K0R-Ha-HiP" id="TT6-r1-3xC"/>
+                <outlet property="scrollViewLogin" destination="fWo-JF-aSZ" id="nNe-Nu-eN1"/>
                 <outlet property="upImage" destination="D9n-sr-9XH" id="Vmt-BI-5Un"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-JF-aSZ">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="fWo-JF-aSZ">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbg-rk-f0J" userLabel="ContentView">
