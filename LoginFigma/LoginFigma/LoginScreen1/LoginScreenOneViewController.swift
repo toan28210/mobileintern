@@ -14,6 +14,7 @@ class LoginScreenOneViewController: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var rememberBtn: UIButton!
     
+    @IBOutlet weak var lbLogoLogin: UILabel!
     let userDefault = UserDefaults.standard
     
     var email: String {
@@ -38,12 +39,15 @@ class LoginScreenOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBorderButton()
-        checkboxRemember()
         
         rememberBtn.setImage(UIImage(named: "img-uncheck-image"), for: .normal)
         rememberBtn.setImage(UIImage(named: "img-check-image"), for: .selected)
     }
+    override func viewDidAppear(_ animated: Bool) {
+        addBorderButton()
+        checkboxRemember()
+    }
+    
     
     func addBorderButton() {
         loginAction.addBottomBorderWithColor(color: UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1), width: 2)

@@ -9,13 +9,13 @@ import UIKit
 
 class LoginScreen2ViewController: UIViewController {
 
-    @IBOutlet weak var emailTextField: BaseTextField!
-    @IBOutlet weak var rememberBtn: UIButton!
-    @IBOutlet weak var passTxt: BaseTextField!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var upImage: UIImageView!
-    @IBOutlet weak var belowImageView: UIImageView!
+    @IBOutlet weak private var emailTextField: BaseTextField!
+    @IBOutlet weak private var rememberBtn: UIButton!
+    @IBOutlet weak private var passTxt: BaseTextField!
+    @IBOutlet weak private var loginBtn: UIButton!
+    @IBOutlet weak private var contentView: UIView!
+    @IBOutlet weak private var upImage: UIImageView!
+    @IBOutlet weak private var belowImageView: UIImageView!
     var email: String {
         get {
             guard let email = emailTextField.text else {
@@ -40,13 +40,8 @@ class LoginScreen2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         checkboxRemember()
-        
-        loginBtn.isEnabled = false
-        
-        rememberBtn.setImage(UIImage(named: "img-uncheck-image"), for: .normal)
-        rememberBtn.setImage(UIImage(named: "img-check-image"), for: .selected)
+        setImageButton()
     }
     
     @IBAction func changeEmail(_ sender: Any) {
@@ -79,6 +74,7 @@ class LoginScreen2ViewController: UIViewController {
             emailTextField.text = emailRemember
             passTxt.text = passRemember
             rememberBtn.isSelected = !rememberBtn.isSelected
+            loginBtn.isEnabled = true
         }
         
     }
@@ -87,6 +83,12 @@ class LoginScreen2ViewController: UIViewController {
         checkRememberClickLogin()
         print("Login Success")
     }
+    
+    func setImageButton() {
+        rememberBtn.setImage(UIImage(named: "img-uncheck-image"), for: .normal)
+        rememberBtn.setImage(UIImage(named: "img-check-image"), for: .selected)
+    }
+    
     func checkRememberClickLogin() {
         if rememberBtn.isSelected {
             userDefault.set(email, forKey: "emailRemember")

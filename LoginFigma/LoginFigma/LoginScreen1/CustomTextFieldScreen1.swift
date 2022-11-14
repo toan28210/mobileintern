@@ -81,7 +81,7 @@ extension CustomTextFieldScreen1 {
             let btnRightView = UIButton(frame: CGRect(
                 x: 0.0,
                 y: 0,
-                width: self.frame.size.height,
+                width: self.frame.size.width,
                 height: self.frame.size.height
             ))
             
@@ -90,7 +90,6 @@ extension CustomTextFieldScreen1 {
             
             self.rightViewMode = .always
             self.rightView = btnRightView
-            
             btnRightView.addTarget(
                 self,
                 action: #selector(self.rightViewButtonClick(_:)),
@@ -107,10 +106,6 @@ extension CustomTextFieldScreen1 {
         } else {
             self.isSecureTextEntry = true
         }
-//        guard let delegate = self.txtDelegate else {
-//            return
-//        }
-//        _ = delegate.floatingTextFieldRightViewClick?(self)
         
     }
     

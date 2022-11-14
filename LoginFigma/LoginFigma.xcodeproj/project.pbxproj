@@ -14,8 +14,6 @@
 		2F5B96DA290FC8870025A957 /* CustomTextFieldScreen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5B96D9290FC8870025A957 /* CustomTextFieldScreen1.swift */; };
 		2F9A66E3291A31C4008B0658 /* LoginScreen2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A66E1291A31C4008B0658 /* LoginScreen2ViewController.swift */; };
 		2F9A66E4291A31C4008B0658 /* LoginScreen2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9A66E2291A31C4008B0658 /* LoginScreen2ViewController.xib */; };
-		2FACED5F2914EF0600C6C2A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FACED5D2914EF0600C6C2A1 /* HomeViewController.swift */; };
-		2FACED602914EF0600C6C2A1 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FACED5E2914EF0600C6C2A1 /* HomeViewController.xib */; };
 		2FCDF7D12910D0EF0067B659 /* CustomViewBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDF7D02910D0EF0067B659 /* CustomViewBorder.swift */; };
 		2FCDF7D72910F4360067B659 /* LoginScreen3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCDF7D52910F4360067B659 /* LoginScreen3ViewController.swift */; };
 		2FCDF7D82910F4360067B659 /* LoginScreen3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FCDF7D62910F4360067B659 /* LoginScreen3ViewController.xib */; };
@@ -34,8 +32,6 @@
 		2F5B96D9290FC8870025A957 /* CustomTextFieldScreen1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldScreen1.swift; sourceTree = "<group>"; };
 		2F9A66E1291A31C4008B0658 /* LoginScreen2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen2ViewController.swift; sourceTree = "<group>"; };
 		2F9A66E2291A31C4008B0658 /* LoginScreen2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginScreen2ViewController.xib; sourceTree = "<group>"; };
-		2FACED5D2914EF0600C6C2A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		2FACED5E2914EF0600C6C2A1 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		2FCDF7D02910D0EF0067B659 /* CustomViewBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBorder.swift; sourceTree = "<group>"; };
 		2FCDF7D52910F4360067B659 /* LoginScreen3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen3ViewController.swift; sourceTree = "<group>"; };
 		2FCDF7D62910F4360067B659 /* LoginScreen3ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginScreen3ViewController.xib; sourceTree = "<group>"; };
@@ -59,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F6D17E02921F2AE005FBB26 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2FD7A950290BAEE600B48324 /* AppDelegate.swift */,
+				2FD7A952290BAEE600B48324 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		2FCDF7D32910F3FA0067B659 /* LoginScreen2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,17 +114,14 @@
 		2FD7A94F290BAEE600B48324 /* LoginFigma */ = {
 			isa = PBXGroup;
 			children = (
-				2FD7A950290BAEE600B48324 /* AppDelegate.swift */,
-				2FD7A952290BAEE600B48324 /* SceneDelegate.swift */,
+				2F6D17E02921F2AE005FBB26 /* Delegate */,
 				2FD7A959290BAEEA00B48324 /* Assets.xcassets */,
 				2FD7A95B290BAEEA00B48324 /* LaunchScreen.storyboard */,
 				2FD7A95E290BAEEA00B48324 /* Info.plist */,
+				2FCDF7D02910D0EF0067B659 /* CustomViewBorder.swift */,
 				2FCDF7D32910F3FA0067B659 /* LoginScreen2 */,
 				2FCDF7D42910F4140067B659 /* LoginScreen1 */,
-				2FCDF7D02910D0EF0067B659 /* CustomViewBorder.swift */,
 				2FCDF7D92910F43C0067B659 /* LoginScreen3 */,
-				2FACED5D2914EF0600C6C2A1 /* HomeViewController.swift */,
-				2FACED5E2914EF0600C6C2A1 /* HomeViewController.xib */,
 			);
 			path = LoginFigma;
 			sourceTree = "<group>";
@@ -187,7 +189,6 @@
 				2FD7A95A290BAEEA00B48324 /* Assets.xcassets in Resources */,
 				2F9A66E4291A31C4008B0658 /* LoginScreen2ViewController.xib in Resources */,
 				2F5B96D8290FC8340025A957 /* LoginScreenOneViewController.xib in Resources */,
-				2FACED602914EF0600C6C2A1 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +206,6 @@
 				2F5B96D7290FC8340025A957 /* LoginScreenOneViewController.swift in Sources */,
 				2F9A66E3291A31C4008B0658 /* LoginScreen2ViewController.swift in Sources */,
 				2FCDF7D72910F4360067B659 /* LoginScreen3ViewController.swift in Sources */,
-				2FACED5F2914EF0600C6C2A1 /* HomeViewController.swift in Sources */,
 				2FCDF7D12910D0EF0067B659 /* CustomViewBorder.swift in Sources */,
 				2F5B96DA290FC8870025A957 /* CustomTextFieldScreen1.swift in Sources */,
 				2FD7A953290BAEE600B48324 /* SceneDelegate.swift in Sources */,
