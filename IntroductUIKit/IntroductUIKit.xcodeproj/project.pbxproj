@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F6D17DC2921E511005FBB26 /* CustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D17DB2921E511005FBB26 /* CustomStyle.swift */; };
+		2F6D17DF2921EB56005FBB26 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D17DE2921EB56005FBB26 /* Font.swift */; };
 		2F75C7E52909099200707553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75C7E42909099200707553 /* AppDelegate.swift */; };
 		2F75C7E72909099200707553 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75C7E62909099200707553 /* SceneDelegate.swift */; };
 		2F75C7EE2909099500707553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F75C7ED2909099500707553 /* Assets.xcassets */; };
 		2F75C7F12909099500707553 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F75C7EF2909099500707553 /* LaunchScreen.storyboard */; };
-		2F75C7FA29090A0100707553 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75C7F829090A0100707553 /* HomeViewController.swift */; };
-		2F75C7FB29090A0100707553 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F75C7F929090A0100707553 /* HomeViewController.xib */; };
 		2F75C7FE29090C2500707553 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75C7FC29090C2500707553 /* CalculateViewController.swift */; };
 		2F75C7FF29090C2500707553 /* CalculateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F75C7FD29090C2500707553 /* CalculateViewController.xib */; };
 		2F75C801290931DC00707553 /* CalculateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75C800290931DC00707553 /* CalculateLogic.swift */; };
@@ -20,14 +20,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F6D17DB2921E511005FBB26 /* CustomStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStyle.swift; sourceTree = "<group>"; };
+		2F6D17DE2921EB56005FBB26 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		2F75C7E12909099200707553 /* IntroductUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntroductUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F75C7E42909099200707553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F75C7E62909099200707553 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2F75C7ED2909099500707553 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F75C7F02909099500707553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F75C7F22909099500707553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F75C7F829090A0100707553 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		2F75C7F929090A0100707553 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		2F75C7FC29090C2500707553 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		2F75C7FD29090C2500707553 /* CalculateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculateViewController.xib; sourceTree = "<group>"; };
 		2F75C800290931DC00707553 /* CalculateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateLogic.swift; sourceTree = "<group>"; };
@@ -45,6 +45,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F6D17D82921E268005FBB26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F75C7FC29090C2500707553 /* CalculateViewController.swift */,
+				2F75C7FD29090C2500707553 /* CalculateViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F6D17D92921E279005FBB26 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2F75C7E42909099200707553 /* AppDelegate.swift */,
+				2F75C7E62909099200707553 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		2F6D17DA2921E292005FBB26 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				2F75C800290931DC00707553 /* CalculateLogic.swift */,
+			);
+			path = "\bLogic";
+			sourceTree = "<group>";
+		};
+		2F6D17DD2921E831005FBB26 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				2F6D17DE2921EB56005FBB26 /* Font.swift */,
+				2F8CC17F2914C917008E3057 /* CustomButton.swift */,
+				2F6D17DB2921E511005FBB26 /* CustomStyle.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		2F75C7D82909099200707553 = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +100,13 @@
 		2F75C7E32909099200707553 /* IntroductUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				2F75C7E42909099200707553 /* AppDelegate.swift */,
-				2F75C7E62909099200707553 /* SceneDelegate.swift */,
+				2F6D17D92921E279005FBB26 /* Delegate */,
 				2F75C7ED2909099500707553 /* Assets.xcassets */,
 				2F75C7EF2909099500707553 /* LaunchScreen.storyboard */,
 				2F75C7F22909099500707553 /* Info.plist */,
-				2F75C7F829090A0100707553 /* HomeViewController.swift */,
-				2F75C7F929090A0100707553 /* HomeViewController.xib */,
-				2F75C7FC29090C2500707553 /* CalculateViewController.swift */,
-				2F75C7FD29090C2500707553 /* CalculateViewController.xib */,
-				2F75C800290931DC00707553 /* CalculateLogic.swift */,
-				2F8CC17F2914C917008E3057 /* CustomButton.swift */,
+				2F6D17D82921E268005FBB26 /* View */,
+				2F6D17DA2921E292005FBB26 /* Logic */,
+				2F6D17DD2921E831005FBB26 /* Custom */,
 			);
 			path = IntroductUIKit;
 			sourceTree = "<group>";
@@ -140,7 +172,6 @@
 				2F75C7F12909099500707553 /* LaunchScreen.storyboard in Resources */,
 				2F75C7FF29090C2500707553 /* CalculateViewController.xib in Resources */,
 				2F75C7EE2909099500707553 /* Assets.xcassets in Resources */,
-				2F75C7FB29090A0100707553 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,10 +184,11 @@
 			files = (
 				2F75C7E52909099200707553 /* AppDelegate.swift in Sources */,
 				2F75C801290931DC00707553 /* CalculateLogic.swift in Sources */,
+				2F6D17DF2921EB56005FBB26 /* Font.swift in Sources */,
 				2F8CC1802914C917008E3057 /* CustomButton.swift in Sources */,
 				2F75C7FE29090C2500707553 /* CalculateViewController.swift in Sources */,
+				2F6D17DC2921E511005FBB26 /* CustomStyle.swift in Sources */,
 				2F75C7E72909099200707553 /* SceneDelegate.swift in Sources */,
-				2F75C7FA29090A0100707553 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
