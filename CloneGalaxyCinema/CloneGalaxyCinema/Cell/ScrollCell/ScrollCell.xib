@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ScrollCell" customModule="CloneGalaxyCinema" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="304"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="410" height="304"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anh" translatesAutoresizingMaskIntoConstraints="NO" id="G34-sq-Fq6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="2uX-NA-IHS"/>
+                            <constraint firstAttribute="width" constant="320" id="F3O-GX-ZwZ"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="G34-sq-Fq6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IFp-1P-wUO"/>
+                <constraint firstItem="G34-sq-Fq6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zp9-vo-Ht7"/>
+            </constraints>
+            <size key="customSize" width="410" height="304"/>
+            <connections>
+                <outlet property="scrollImageView" destination="G34-sq-Fq6" id="9n9-I2-DD5"/>
+            </connections>
+            <point key="canvasLocation" x="413.74045801526717" y="134.50704225352112"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="anh" width="300" height="168"/>
+    </resources>
+</document>
