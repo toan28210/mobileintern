@@ -23,9 +23,9 @@ class FooterCell: UICollectionViewCell {
     func configure() {
         footerCellImageView.layer.cornerRadius = 5
     }
-    func configur(with model: FooterScrollData) {
+    func configur(with model: SlideFooterData) {
         footerTitleLb.text = model.title
-        footerCellImageView.image = UIImage(named: model.image)
+        footerCellImageView.image = UIImage(named: model.slideImage)
     }
 
 }

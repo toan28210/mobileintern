@@ -34,6 +34,7 @@ class FooterConentView: UICollectionReusableView {
         superView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         superView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         superView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        superView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
 
 }

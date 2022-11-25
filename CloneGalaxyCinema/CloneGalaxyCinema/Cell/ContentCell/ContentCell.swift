@@ -18,9 +18,9 @@ class ContentCell: UICollectionViewCell {
         super.awakeFromNib()
         contentImageView.layer.cornerRadius = 5
     }
-    func configure(data: ContentData) {
-        contentImageView.image = UIImage(named: data.image)
-        contentNameLb.text = data.name
+    func configure(data: FlimDataModel) {
+        contentImageView.image = UIImage(named: data.flimImage)
+        contentNameLb.text = data.flimName
     }
 
 }

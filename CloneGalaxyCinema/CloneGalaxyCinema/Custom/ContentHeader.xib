@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-GQ-lHo">
-                    <rect key="frame" x="10" y="316" width="128" height="35"/>
+                    <rect key="frame" x="10" y="59" width="128" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="128" id="Zi0-w8-GIa"/>
                     </constraints>
@@ -33,7 +33,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buE-Uu-yXW">
-                    <rect key="frame" x="138" y="316" width="126.66666666666669" height="35"/>
+                    <rect key="frame" x="138" y="59" width="126.66666666666669" height="35"/>
                     <color key="tintColor" systemColor="systemGray2Color"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Coming Soon"/>
@@ -42,7 +42,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ee-Q8-mLx">
-                    <rect key="frame" x="296.66666666666669" y="316" width="68.333333333333314" height="35"/>
+                    <rect key="frame" x="296.66666666666669" y="59" width="68.333333333333314" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="location" catalog="system" title="All"/>
                     <connections>
@@ -54,11 +54,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="buE-Uu-yXW" firstAttribute="leading" secondItem="c7A-GQ-lHo" secondAttribute="trailing" id="45O-ef-3H1"/>
+                <constraint firstItem="buE-Uu-yXW" firstAttribute="top" secondItem="c7A-GQ-lHo" secondAttribute="top" id="8eC-IG-esa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9ee-Q8-mLx" secondAttribute="trailing" constant="10" id="AXY-gY-ahs"/>
-                <constraint firstItem="9ee-Q8-mLx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="TOM-Iv-svJ"/>
-                <constraint firstItem="buE-Uu-yXW" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="YHq-GB-csU"/>
+                <constraint firstItem="c7A-GQ-lHo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Xis-wv-gzJ"/>
                 <constraint firstItem="c7A-GQ-lHo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="eVT-lD-pJd"/>
-                <constraint firstItem="c7A-GQ-lHo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="iue-j8-yRu"/>
+                <constraint firstItem="9ee-Q8-mLx" firstAttribute="top" secondItem="buE-Uu-yXW" secondAttribute="top" id="il0-RL-2YD"/>
             </constraints>
             <point key="canvasLocation" x="220.61068702290075" y="32.394366197183103"/>
         </view>

@@ -18,11 +18,8 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0wD-qy-NMB">
-                        <rect key="frame" x="0.0" y="0.0" width="434" height="220"/>
+                        <rect key="frame" x="0.0" y="0.0" width="434" height="270"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="220" id="Hjy-1e-kQ8"/>
-                        </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UMr-hA-ptj">
                             <size key="itemSize" width="320" height="220"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -36,6 +33,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="0wD-qy-NMB" secondAttribute="trailing" id="8sO-I3-ajA"/>
                 <constraint firstItem="0wD-qy-NMB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DAn-IG-c0w"/>
+                <constraint firstAttribute="bottom" secondItem="0wD-qy-NMB" secondAttribute="bottom" id="P3u-dP-DhZ"/>
                 <constraint firstItem="0wD-qy-NMB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sDf-G6-Ggv"/>
             </constraints>
             <size key="customSize" width="434" height="270"/>

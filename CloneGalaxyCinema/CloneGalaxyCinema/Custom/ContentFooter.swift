@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ContentFooterDelegate: AnyObject {
-    func didTabSeeMore(_ button: UIButton)
+    func didTabSeeMore()
 }
 
 class ContentFooter: UIView {
@@ -29,6 +29,10 @@ class ContentFooter: UIView {
         self.addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        delegate?.didTabSeeMore(seeMoreBtn)
     }
+
+    @IBAction func didTabSeeMore(_ sender: UIButton) {
+        delegate?.didTabSeeMore()
+    }
+
 }

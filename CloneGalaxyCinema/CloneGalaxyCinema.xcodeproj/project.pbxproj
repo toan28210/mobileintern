@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0CE26A292F0E8E006DD0FB /* FlimDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CE269292F0E8E006DD0FB /* FlimDataModel.swift */; };
+		2F0CE26C292F12BC006DD0FB /* SliderFooterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CE26B292F12BC006DD0FB /* SliderFooterDataModel.swift */; };
+		2F0CE26E292F136A006DD0FB /* SliderHeaderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CE26D292F136A006DD0FB /* SliderHeaderDataModel.swift */; };
 		2F475B442924FD9700BE246F /* ScrollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B422924FD9700BE246F /* ScrollCollectionViewCell.swift */; };
 		2F475B452924FD9700BE246F /* ScrollCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F475B432924FD9700BE246F /* ScrollCollectionViewCell.xib */; };
-		2F475B472924FF3800BE246F /* ScrolingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B462924FF3800BE246F /* ScrolingData.swift */; };
-		2F475B4A29250A7B00BE246F /* ScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B4829250A7B00BE246F /* ScrollCell.swift */; };
-		2F475B4B29250A7B00BE246F /* ScrollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F475B4929250A7B00BE246F /* ScrollCell.xib */; };
+		2F475B4A29250A7B00BE246F /* ScrollHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B4829250A7B00BE246F /* ScrollHeaderCell.swift */; };
+		2F475B4B29250A7B00BE246F /* ScrollHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F475B4929250A7B00BE246F /* ScrollHeaderCell.xib */; };
 		2F475B4E2925101E00BE246F /* ScrollFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B4D2925101E00BE246F /* ScrollFooter.swift */; };
-		2F475B5229252AC400BE246F /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B5029252AC400BE246F /* ContentCollectionViewCell.swift */; };
-		2F475B5329252AC400BE246F /* ContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F475B5129252AC400BE246F /* ContentCollectionViewCell.xib */; };
 		2F475B5629252C5100BE246F /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B5429252C5100BE246F /* ContentCell.swift */; };
 		2F475B5729252C5100BE246F /* ContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F475B5529252C5100BE246F /* ContentCell.xib */; };
 		2F475B592925386B00BE246F /* HeaderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B582925386B00BE246F /* HeaderContent.swift */; };
@@ -28,7 +28,6 @@
 		2F92945C292B74F000E79106 /* ContentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F92945B292B74F000E79106 /* ContentHeader.swift */; };
 		2F92945F292B779400E79106 /* PlainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F92945D292B779400E79106 /* PlainViewController.swift */; };
 		2F929460292B779400E79106 /* PlainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F92945E292B779400E79106 /* PlainViewController.xib */; };
-		2F929464292C7F1000E79106 /* ALRadioButtons in Frameworks */ = {isa = PBXBuildFile; productRef = 2F929463292C7F1000E79106 /* ALRadioButtons */; };
 		2F9C83BC291E36C400BF5602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C83BB291E36C400BF5602 /* AppDelegate.swift */; };
 		2F9C83BE291E36C400BF5602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C83BD291E36C400BF5602 /* SceneDelegate.swift */; };
 		2F9C83C5291E36C800BF5602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9C83C4291E36C800BF5602 /* Assets.xcassets */; };
@@ -41,6 +40,7 @@
 		2F9C83DA291E407700BF5602 /* MovieBlogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9C83D8291E407700BF5602 /* MovieBlogViewController.xib */; };
 		2F9C83DD291E409100BF5602 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C83DB291E409100BF5602 /* AccountViewController.swift */; };
 		2F9C83DE291E409100BF5602 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9C83DC291E409100BF5602 /* AccountViewController.xib */; };
+		2FE8C4C32930A4FD00D72869 /* InsertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE8C4C22930A4FD00D72869 /* InsertData.swift */; };
 		2FEDBCA0292B4CE5003D5D9A /* FooterScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEDBC9E292B4CE5003D5D9A /* FooterScrollCell.swift */; };
 		2FEDBCA1292B4CE5003D5D9A /* FooterScrollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FEDBC9F292B4CE5003D5D9A /* FooterScrollCell.xib */; };
 		2FEDBCA6292B4EED003D5D9A /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEDBCA4292B4EED003D5D9A /* FooterCell.swift */; };
@@ -48,14 +48,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F0CE269292F0E8E006DD0FB /* FlimDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlimDataModel.swift; sourceTree = "<group>"; };
+		2F0CE26B292F12BC006DD0FB /* SliderFooterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFooterDataModel.swift; sourceTree = "<group>"; };
+		2F0CE26D292F136A006DD0FB /* SliderHeaderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeaderDataModel.swift; sourceTree = "<group>"; };
 		2F475B422924FD9700BE246F /* ScrollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F475B432924FD9700BE246F /* ScrollCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollCollectionViewCell.xib; sourceTree = "<group>"; };
-		2F475B462924FF3800BE246F /* ScrolingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrolingData.swift; sourceTree = "<group>"; };
-		2F475B4829250A7B00BE246F /* ScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCell.swift; sourceTree = "<group>"; };
-		2F475B4929250A7B00BE246F /* ScrollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollCell.xib; sourceTree = "<group>"; };
+		2F475B4829250A7B00BE246F /* ScrollHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollHeaderCell.swift; sourceTree = "<group>"; };
+		2F475B4929250A7B00BE246F /* ScrollHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollHeaderCell.xib; sourceTree = "<group>"; };
 		2F475B4D2925101E00BE246F /* ScrollFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollFooter.swift; sourceTree = "<group>"; };
-		2F475B5029252AC400BE246F /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
-		2F475B5129252AC400BE246F /* ContentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F475B5429252C5100BE246F /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
 		2F475B5529252C5100BE246F /* ContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCell.xib; sourceTree = "<group>"; };
 		2F475B582925386B00BE246F /* HeaderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContent.swift; sourceTree = "<group>"; };
@@ -83,6 +83,7 @@
 		2F9C83D8291E407700BF5602 /* MovieBlogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieBlogViewController.xib; sourceTree = "<group>"; };
 		2F9C83DB291E409100BF5602 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		2F9C83DC291E409100BF5602 /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		2FE8C4C22930A4FD00D72869 /* InsertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertData.swift; sourceTree = "<group>"; };
 		2FEDBC9E292B4CE5003D5D9A /* FooterScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterScrollCell.swift; sourceTree = "<group>"; };
 		2FEDBC9F292B4CE5003D5D9A /* FooterScrollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterScrollCell.xib; sourceTree = "<group>"; };
 		2FEDBCA4292B4EED003D5D9A /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
@@ -94,18 +95,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F929464292C7F1000E79106 /* ALRadioButtons in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F0CE268292F0E73006DD0FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F0CE269292F0E8E006DD0FB /* FlimDataModel.swift */,
+				2F0CE26B292F12BC006DD0FB /* SliderFooterDataModel.swift */,
+				2F0CE26D292F136A006DD0FB /* SliderHeaderDataModel.swift */,
+				2FE8C4C22930A4FD00D72869 /* InsertData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2F0E39362927314300E05F52 /* ContentCell */ = {
 			isa = PBXGroup;
 			children = (
-				2F475B5029252AC400BE246F /* ContentCollectionViewCell.swift */,
-				2F475B5129252AC400BE246F /* ContentCollectionViewCell.xib */,
 				2F475B5429252C5100BE246F /* ContentCell.swift */,
 				2F475B5529252C5100BE246F /* ContentCell.xib */,
 			);
@@ -152,22 +161,21 @@
 			isa = PBXGroup;
 			children = (
 				2F475B4D2925101E00BE246F /* ScrollFooter.swift */,
-				2F475B582925386B00BE246F /* HeaderContent.swift */,
 				2F531B8C2925EA0600E04BFB /* FooterConentView.swift */,
 				2F531B8D2925EA0600E04BFB /* FooterConentView.xib */,
 			);
 			path = Footer;
 			sourceTree = "<group>";
 		};
-		2F475B4F2925298D00BE246F /* ScrollCell */ = {
+		2F475B4F2925298D00BE246F /* ScrollHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
 				2F475B422924FD9700BE246F /* ScrollCollectionViewCell.swift */,
 				2F475B432924FD9700BE246F /* ScrollCollectionViewCell.xib */,
-				2F475B4829250A7B00BE246F /* ScrollCell.swift */,
-				2F475B4929250A7B00BE246F /* ScrollCell.xib */,
+				2F475B4829250A7B00BE246F /* ScrollHeaderCell.swift */,
+				2F475B4929250A7B00BE246F /* ScrollHeaderCell.xib */,
 			);
-			path = ScrollCell;
+			path = ScrollHeaderCell;
 			sourceTree = "<group>";
 		};
 		2F9C83AF291E36C400BF5602 = {
@@ -189,15 +197,15 @@
 		2F9C83BA291E36C400BF5602 /* CloneGalaxyCinema */ = {
 			isa = PBXGroup;
 			children = (
+				2FE8C4C02930A34E00D72869 /* Header&FooterSection */,
+				2F0CE268292F0E73006DD0FB /* Model */,
 				2FC90B632924B07C00875AC9 /* Delegate */,
-				2F475B4C29250FF100BE246F /* Footer */,
 				2FD1FC492923696C00FD0CB6 /* Cell */,
 				2F9C83C4291E36C800BF5602 /* Assets.xcassets */,
 				2F9C83C6291E36C800BF5602 /* LaunchScreen.storyboard */,
 				2F9C83C9291E36C800BF5602 /* Info.plist */,
 				2FC90B602924B03B00875AC9 /* Pages */,
 				2FC90B612924B06000875AC9 /* Custom */,
-				2F475B462924FF3800BE246F /* ScrolingData.swift */,
 			);
 			path = CloneGalaxyCinema;
 			sourceTree = "<group>";
@@ -209,8 +217,7 @@
 				2F21180829275E4900AF6652 /* Cinema */,
 				2F21180929275E5900AF6652 /* MovieBlog */,
 				2F21180A29275E6600AF6652 /* Account */,
-				2F92945D292B779400E79106 /* PlainViewController.swift */,
-				2F92945E292B779400E79106 /* PlainViewController.xib */,
+				2FE8C4BF2930A30400D72869 /* Plain */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -241,10 +248,36 @@
 			isa = PBXGroup;
 			children = (
 				2FEDBC9D292B4C98003D5D9A /* FooterScrollCell */,
-				2F475B4F2925298D00BE246F /* ScrollCell */,
+				2F475B4F2925298D00BE246F /* ScrollHeaderCell */,
 				2F0E39362927314300E05F52 /* ContentCell */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2FE8C4BF2930A30400D72869 /* Plain */ = {
+			isa = PBXGroup;
+			children = (
+				2F92945D292B779400E79106 /* PlainViewController.swift */,
+				2F92945E292B779400E79106 /* PlainViewController.xib */,
+			);
+			path = Plain;
+			sourceTree = "<group>";
+		};
+		2FE8C4C02930A34E00D72869 /* Header&FooterSection */ = {
+			isa = PBXGroup;
+			children = (
+				2FE8C4C12930A36B00D72869 /* Header */,
+				2F475B4C29250FF100BE246F /* Footer */,
+			);
+			path = "Header&FooterSection";
+			sourceTree = "<group>";
+		};
+		2FE8C4C12930A36B00D72869 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				2F475B582925386B00BE246F /* HeaderContent.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		2FEDBC9D292B4C98003D5D9A /* FooterScrollCell */ = {
@@ -276,7 +309,6 @@
 			);
 			name = CloneGalaxyCinema;
 			packageProductDependencies = (
-				2F929463292C7F1000E79106 /* ALRadioButtons */,
 			);
 			productName = CloneGalaxyCinema;
 			productReference = 2F9C83B8291E36C400BF5602 /* CloneGalaxyCinema.app */;
@@ -307,7 +339,6 @@
 			);
 			mainGroup = 2F9C83AF291E36C400BF5602;
 			packageReferences = (
-				2F929462292C7F1000E79106 /* XCRemoteSwiftPackageReference "ALRadioButtons" */,
 			);
 			productRefGroup = 2F9C83B9291E36C400BF5602 /* Products */;
 			projectDirPath = "";
@@ -332,12 +363,11 @@
 				2F9C83D6291E404F00BF5602 /* CinemaViewController.xib in Resources */,
 				2F9C83C5291E36C800BF5602 /* Assets.xcassets in Resources */,
 				2F9C83DE291E409100BF5602 /* AccountViewController.xib in Resources */,
-				2F475B4B29250A7B00BE246F /* ScrollCell.xib in Resources */,
+				2F475B4B29250A7B00BE246F /* ScrollHeaderCell.xib in Resources */,
 				2FEDBCA1292B4CE5003D5D9A /* FooterScrollCell.xib in Resources */,
 				2FEDBCA7292B4EED003D5D9A /* FooterCell.xib in Resources */,
 				2F929460292B779400E79106 /* PlainViewController.xib in Resources */,
 				2F92945A292B747F00E79106 /* ContentHeader.xib in Resources */,
-				2F475B5329252AC400BE246F /* ContentCollectionViewCell.xib in Resources */,
 				2F531B8F2925EA0600E04BFB /* FooterConentView.xib in Resources */,
 				2F9C83D2291E371C00BF5602 /* HomeViewController.xib in Resources */,
 			);
@@ -374,22 +404,24 @@
 				2F475B5629252C5100BE246F /* ContentCell.swift in Sources */,
 				2F531B8E2925EA0600E04BFB /* FooterConentView.swift in Sources */,
 				2F475B442924FD9700BE246F /* ScrollCollectionViewCell.swift in Sources */,
+				2FE8C4C32930A4FD00D72869 /* InsertData.swift in Sources */,
 				2F92945F292B779400E79106 /* PlainViewController.swift in Sources */,
 				2F92945C292B74F000E79106 /* ContentHeader.swift in Sources */,
 				2F9C83D9291E407700BF5602 /* MovieBlogViewController.swift in Sources */,
-				2F475B4A29250A7B00BE246F /* ScrollCell.swift in Sources */,
-				2F475B5229252AC400BE246F /* ContentCollectionViewCell.swift in Sources */,
+				2F475B4A29250A7B00BE246F /* ScrollHeaderCell.swift in Sources */,
 				2F9C83DD291E409100BF5602 /* AccountViewController.swift in Sources */,
 				2F475B592925386B00BE246F /* HeaderContent.swift in Sources */,
 				2F785E9F292C81F000DA3776 /* Dialog.swift in Sources */,
+				2F0CE26E292F136A006DD0FB /* SliderHeaderDataModel.swift in Sources */,
 				2FEDBCA6292B4EED003D5D9A /* FooterCell.swift in Sources */,
 				2F475B4E2925101E00BE246F /* ScrollFooter.swift in Sources */,
-				2F475B472924FF3800BE246F /* ScrolingData.swift in Sources */,
 				2F7925BD292725CE004AB281 /* ContentFooter.swift in Sources */,
 				2F9C83D5291E404F00BF5602 /* CinemaViewController.swift in Sources */,
 				2F9C83BE291E36C400BF5602 /* SceneDelegate.swift in Sources */,
+				2F0CE26A292F0E8E006DD0FB /* FlimDataModel.swift in Sources */,
 				2F9C83D1291E371C00BF5602 /* HomeViewController.swift in Sources */,
 				2FEDBCA0292B4CE5003D5D9A /* FooterScrollCell.swift in Sources */,
+				2F0CE26C292F12BC006DD0FB /* SliderFooterDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,25 +629,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2F929462292C7F1000E79106 /* XCRemoteSwiftPackageReference "ALRadioButtons" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alxrguz/ALRadioButtons";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2F929463292C7F1000E79106 /* ALRadioButtons */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F929462292C7F1000E79106 /* XCRemoteSwiftPackageReference "ALRadioButtons" */;
-			productName = ALRadioButtons;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2F9C83B0291E36C400BF5602 /* Project object */;
 }

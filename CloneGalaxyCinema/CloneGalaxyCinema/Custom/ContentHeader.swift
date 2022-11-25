@@ -7,8 +7,8 @@
 
 import UIKit
 protocol ContentHeaderDelegate: AnyObject {
-    func changeDataNowContent()
-    func changeDataComContent()
+    func changeDataNowContent(_ headerIndex: Int)
+    func changeDataComContent(_ headerIndex: Int)
     func dialog(_ view: UIView)
 }
 protocol ContentHeaderDataSource: AnyObject {
@@ -24,7 +24,7 @@ class ContentHeader: UIView {
     @IBOutlet weak var nowBtn: UIButton!
     @IBOutlet weak var addressBtn: UIButton!
     var headerIndex = 0
-    var data: [ContentData] = []
+    var data: [FlimDataModel] = []
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -39,7 +39,7 @@ class ContentHeader: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
-    private func updateButtonUI() {
+    func updateButtonUI() {
         if headerIndex == 0 {
             nowBtn.tintColor = .link
             comingBtn.tintColor = .gray
@@ -52,19 +52,16 @@ class ContentHeader: UIView {
     @IBAction func handleLocation(_ sender: UIButton) {
         let dialog = Dialog()
         delegate?.dialog(dialog)
-//        if let text = datasource?.dialogData() {
-//            addressBtn.setTitle(text, for: .normal)
-//        }
     }
     @IBAction func didTabButton(_ sender: UIButton) {
         if sender.tag == 0 {
             headerIndex = 0
             addressBtn.isEnabled = true
-            delegate?.changeDataNowContent()
+            delegate?.changeDataNowContent(headerIndex)
         } else {
             headerIndex = 1
             addressBtn.isEnabled = false
-            delegate?.changeDataComContent()
+            delegate?.changeDataComContent(headerIndex)
         }
         updateButtonUI()
     }

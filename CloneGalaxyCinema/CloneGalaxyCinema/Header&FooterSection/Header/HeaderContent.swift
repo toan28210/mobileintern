@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol HeaderContentDelegate: AnyObject {
-    func didTabData(_ sender: UIButton, data: ContentData)
-}
-
 class HeaderContent: UICollectionReusableView {
     static let identifier = "HeaderContent"
 
@@ -35,11 +31,9 @@ class HeaderContent: UICollectionReusableView {
     }
     func setupConstraints() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 15).isActive = true
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-    }
-
-    func updateUIButton(_ index: Int) {
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
 }

@@ -12,13 +12,33 @@ class FooterScrollCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: FooterScrollCell.identifier, bundle: .main)
     }
-
-    var footerData: [FooterScrollData] = []
+    var timer: Timer?
+    var currentCellIndex = 0
+    var footerData: [SlideFooterData] = []
     @IBOutlet weak var footerCollectionView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCollectionView()
-        print(footerCollectionView.frame.height)
+        timer = Timer.scheduledTimer(
+            timeInterval: 5.0,
+            target: self,
+            selector: #selector(slideToNext),
+            userInfo: nil,
+            repeats: true)
+    }
+
+    @objc func slideToNext() {
+        if currentCellIndex < footerData.count - 1 {
+            currentCellIndex += 1
+        } else {
+            currentCellIndex = 0
+        }
+        footerCollectionView.isPagingEnabled = false
+        footerCollectionView.scrollToItem(
+            at: IndexPath(item: currentCellIndex, section: 0),
+            at: .centeredHorizontally,
+            animated: true)
+        footerCollectionView.isPagingEnabled = true
     }
 
     private func configureCollectionView() {
@@ -32,11 +52,11 @@ class FooterScrollCell: UICollectionViewCell {
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                   heightDimension: .fractionalHeight(1.0))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//            let itemSpacing: CGFloat = 5
-//            item.contentInsets = NSDirectionalEdgeInsets(top: itemSpacing,
-//                                                         leading: itemSpacing,
-//                                                         bottom: itemSpacing,
-//                                                         trailing: itemSpacing)
+            let itemSpacing: CGFloat = 5
+            item.contentInsets = NSDirectionalEdgeInsets(top: itemSpacing,
+                                                         leading: itemSpacing,
+                                                         bottom: itemSpacing,
+                                                         trailing: itemSpacing)
             let nestedGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.85),
                                                          heightDimension: .fractionalWidth(0.7))
             let nestedGroup = NSCollectionLayoutGroup.horizontal(layoutSize: nestedGroupSize,
