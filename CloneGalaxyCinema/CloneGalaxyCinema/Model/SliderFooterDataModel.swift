@@ -7,12 +7,14 @@
 
 import Foundation
 
-struct SlideFooterData {
-    let slideImage: String
-    let title: String
+struct SlideFooterDataModel: Codable {
+    var image: String
+    var title: String
+}
 
-    init(slideImage: String, title: String) {
-        self.slideImage = slideImage
-        self.title = title
+extension SlideFooterDataModel: Identifiable {
+    var id: UUID {
+        let id = UUID()
+        return id
     }
 }

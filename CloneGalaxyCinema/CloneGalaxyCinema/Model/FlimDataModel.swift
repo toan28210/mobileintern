@@ -7,16 +7,17 @@
 
 import Foundation
 
-struct FlimDataModel {
-    let flimName: String
-    let flimImage: String
-    let evalute: String
-    let limitAge: String
+struct FlimDataModel: Codable {
+    var flimImage: String
+    var flimName: String
+    var evaluate: String
+    var limitAge: String
+    var iscomming: Bool
+}
 
-    init(flimName: String, flimImage: String, evalute: String, limitAge: String) {
-        self.flimName = flimName
-        self.flimImage = flimImage
-        self.evalute = evalute
-        self.limitAge = limitAge
+extension FlimDataModel: Identifiable {
+    var id: UUID {
+        let id = UUID()
+        return id
     }
 }

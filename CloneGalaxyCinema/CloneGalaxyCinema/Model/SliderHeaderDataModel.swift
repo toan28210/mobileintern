@@ -7,10 +7,13 @@
 
 import Foundation
 
-struct SlideHeaderDataModel {
-    let slideHeaderImage: String
+struct SlideHeaderDataModel: Codable {
+    var slideHeaderImage: String
+}
 
-    init(slideHeaderImage: String) {
-        self.slideHeaderImage = slideHeaderImage
+extension SlideHeaderDataModel: Identifiable {
+    var id: UUID {
+        let id = UUID()
+        return id
     }
 }

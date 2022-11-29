@@ -6,9 +6,6 @@
 //
 
 import UIKit
-protocol ScrollCollectionViewCellDelegate: AnyObject {
-    func nextSlide(_ collectionView: UICollectionView)
-}
 
 class ScrollCollectionViewCell: UICollectionViewCell {
     static let identifier = "ScrollCollectionViewCell"
@@ -17,15 +14,23 @@ class ScrollCollectionViewCell: UICollectionViewCell {
     }
     private var indexOfCellBeforeDragging = 0
     var currentCellIndex = 0
-    weak var delegate: ScrollCollectionViewCellDelegate?
+    var timer = Timer()
     @IBOutlet weak var scrollCollectionView: UICollectionView!
-    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
-    var scrollImage: [SlideHeaderDataModel] = []
+    var items: [SlideHeaderDataModel] = []
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         configureCollectionView()
-        delegate?.nextSlide(scrollCollectionView)
         registerCollectionView()
+        let scrollFooter = ScrollFooter()
+        scrollFooter.delegate = self
     }
     private func configureCollectionView() {
         scrollCollectionView.delegate = self
@@ -35,41 +40,37 @@ class ScrollCollectionViewCell: UICollectionViewCell {
 
     private func registerCollectionView() {
         scrollCollectionView.register(ScrollHeaderCell.nib(), forCellWithReuseIdentifier: ScrollHeaderCell.identifier)
+        scrollCollectionView.register(ScrollFooter.self,
+                                      forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                                      withReuseIdentifier: ScrollFooter.identifier)
     }
     private func createLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { (_, _) -> NSCollectionLayoutSection? in
-            let inset: CGFloat = 5
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                  heightDimension: .fractionalHeight(1.0))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(
-                top: inset,
-                leading: inset,
-                bottom: inset,
-                trailing: inset)
-            let nestedGroupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(0.85),
-                heightDimension: .fractionalWidth(0.6))
-            print(nestedGroupSize)
-            let nestedGroup = NSCollectionLayoutGroup.horizontal(
-                layoutSize: nestedGroupSize,
-                subitems: [item])
-            // section
-            let section = NSCollectionLayoutSection(group: nestedGroup)
-            section.orthogonalScrollingBehavior = .groupPagingCentered
-            return section
-        }
-        // layout
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(330),
+                                              heightDimension: .absolute(210))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 8, bottom: 0, trailing: 8)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(330),
+                                               heightDimension: .absolute(210))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitems: [item])
+        let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .absolute(50.0))
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize,
+                                                                 elementKind: UICollectionView.elementKindSectionFooter,
+                                                                 alignment: .bottom)
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [footer]
+        section.orthogonalScrollingBehavior = .groupPagingCentered
+        let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
-
 }
 extension ScrollCollectionViewCell: UICollectionViewDelegateFlowLayout,
                                     UICollectionViewDataSource,
                                     UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return scrollImage.count
+        return items.count
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -78,7 +79,42 @@ extension ScrollCollectionViewCell: UICollectionViewDelegateFlowLayout,
             for: indexPath) as? ScrollHeaderCell else {
             fatalError()
         }
-        cell.cofigure(data: scrollImage[indexPath.row])
+        cell.cofigure(data: items[indexPath.row])
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print(collectionViewLayout.accessibilityFrame.size.width)
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+    }
+    // Footer Collection View
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let footerSlideHeader = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: ScrollFooter.identifier,
+            for: indexPath) as? ScrollFooter else {
+            return ScrollFooter()
+        }
+        footerSlideHeader.pageControl.numberOfPages = items.count
+        footerSlideHeader.currentSlideIndex = items.count
+        footerSlideHeader.delegate = self
+        return footerSlideHeader
+    }
+}
+
+extension ScrollCollectionViewCell {
+}
+
+extension ScrollCollectionViewCell: HeaderScrollFooterDelegate {
+    func slideToNext(_ index: Int) {
+        scrollCollectionView.isPagingEnabled = false
+        scrollCollectionView.scrollToItem(
+            at: IndexPath(item: index, section: 0),
+            at: .centeredHorizontally,
+            animated: true)
+        scrollCollectionView.isPagingEnabled = true
     }
 }

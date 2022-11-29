@@ -11,24 +11,45 @@ enum UIUserInterfaceIdiom: Int {
     case phone
     case pad
 }
+enum Section: Int {
+    case header = 0
+    case main = 1
+    case footer = 2
+}
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var homeCollectionView: UICollectionView!
-    let getData = InsertData()
-    lazy var model = getData.insertDataFlimNow()
+    // Get Content Flim Data
+    private let flimItems = Bundle.main.decode(
+        type: [FlimDataModel].self,
+        from: "DummyDataFlimJSON.json")
+    private var flimNowItems: [FlimDataModel] = []
+    private var flimCommingItems: [FlimDataModel] = []
+    lazy var model = flimNowItems
+
+    // Get Data Slide Header
+    private let slideImageHeaderItems = Bundle.main.decode(
+        type: [SlideHeaderDataModel].self,
+        from: "DummyDataSlideHeaderJSON.json")
+    // Get data Slide Footer
+    private let slideFooterItems = Bundle.main.decode(
+        type: [SlideFooterDataModel].self,
+        from: "DummyDataSlideFooterJSON.json")
+    // Layout collectionView
     let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 5
+        layout.minimumInteritemSpacing = 4
         layout.minimumLineSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         return layout
     }()
+    // pageControl
     var currentcellIndext = 0
     lazy var currentHeaderIndex = 0
-    var time: Timer?
 
     let numberOfSection = 3
 
+    // Section
     let numberSectionHeader = 0
     let numberSectionContent = 1
     let numberSectionFooter = 2
@@ -37,9 +58,19 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getItemsFlim()
         configureCollectionView()
         collectionViewRegisterCell()
-        registerFooterHeader()
+        registerFooterHeaderSection()
+    }
+    private func getItemsFlim() {
+        flimItems.forEach { item in
+            if item.iscomming {
+                flimNowItems.append(item)
+            } else {
+                flimCommingItems.append(item)
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +93,7 @@ class HomeViewController: UIViewController {
         homeCollectionView.register(FooterScrollCell.nib(),
                                     forCellWithReuseIdentifier: FooterScrollCell.identifier)
     }
-    private func registerFooterHeader() {
+    private func registerFooterHeaderSection() {
         homeCollectionView.register(ScrollFooter.self,
                                     forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                                     withReuseIdentifier: ScrollFooter.identifier)
@@ -78,7 +109,11 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == numberSectionContent {
-            return numberCellContent
+            if model.count >= 6 {
+                return numberCellContent
+            } else {
+                return model.count
+            }
         } else {
             return 1
         }
@@ -94,7 +129,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 for: indexPath) as? ScrollCollectionViewCell else {
                 fatalError()
             }
-            cell.scrollImage = getData.inserDataSliderHeader()
+            cell.items = slideImageHeaderItems
+            cell.backgroundColor = .red
             return cell
         } else if indexPath.section == numberSectionContent {
             guard let cell = collectionView.dequeueReusableCell(
@@ -110,7 +146,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 for: indexPath) as? FooterScrollCell else {
                 fatalError()
             }
-            cell.footerData = getData.insertDataSliderFooter()
+            cell.footerItems = slideFooterItems
             return cell
         }
     }
@@ -145,25 +181,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 return CGSize(width: itemDimension, height: height)
             }
         default:
-            return CGSize(width: collectionView.frame.width, height: view.bounds.height/2.5)
+            return CGSize(width: collectionView.frame.width, height: 300)
         }
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
-        if indexPath.section == numberSectionHeader {
-            guard let footer = collectionView.dequeueReusableSupplementaryView(
-                ofKind: UICollectionView.elementKindSectionFooter,
-                withReuseIdentifier: ScrollFooter.identifier,
-                for: indexPath) as? ScrollFooter else {
-                fatalError()
-            }
-            footer.pageControl.numberOfPages = getData.inserDataSliderHeader().count
-            footer.currentSlideIndex = getData.inserDataSliderHeader().count
-            footer.delegate = self
-            return footer
-        } else {
             if kind == UICollectionView.elementKindSectionHeader {
                 guard let header = collectionView.dequeueReusableSupplementaryView(
                     ofKind: UICollectionView.elementKindSectionHeader,
@@ -183,14 +207,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 footer.superView.delegate = self
                 return footer
             }
-        }
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         referenceSizeForFooterInSection section: Int) -> CGSize {
-        if section == numberSectionHeader {
-            return CGSize(width: collectionView.frame.width, height: 30)
-        } else if section == numberSectionContent {
+        if section == numberSectionContent {
             return CGSize(width: collectionView.frame.width, height: 100)
         } else {
             return CGSize(width: 0, height: 0)
@@ -229,13 +250,13 @@ extension HomeViewController: ContentHeaderDelegate {
     }
 
     func changeDataNowContent(_ headerIndex: Int) {
-        model = getData.insertDataFlimNow()
+        model = flimNowItems
         currentHeaderIndex = headerIndex
         homeCollectionView.reloadData()
     }
 
     func changeDataComContent(_ headerIndex: Int) {
-        model = getData.insertDataFlimComing()
+        model = flimCommingItems
         currentHeaderIndex = headerIndex
         homeCollectionView.reloadData()
     }

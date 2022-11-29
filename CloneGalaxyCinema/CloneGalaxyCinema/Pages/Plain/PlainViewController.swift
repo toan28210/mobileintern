@@ -8,11 +8,18 @@
 import UIKit
 
 class PlainViewController: UIViewController {
-    lazy var model: [FlimDataModel] = []
-    lazy var headerIndex: Int = 0
-    let getData = InsertData()
     @IBOutlet weak var contentCollectionView: UICollectionView!
     @IBOutlet weak var contentView: ContentHeader!
+    private let flimItems = Bundle.main.decode(
+        type: [FlimDataModel].self,
+        from: "DummyDataFlimJSON.json")
+    private var flimNowItems: [FlimDataModel] = []
+    private var flimCommingItems: [FlimDataModel] = []
+    lazy var model: [FlimDataModel] = []
+
+    // Index Update UI Header Section
+    lazy var headerIndex: Int = 0
+
     let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 5
@@ -28,7 +35,18 @@ class PlainViewController: UIViewController {
         contentView.delegate = self
         configureCollectionView()
         configureButton()
+        getItemsFlim()
     }
+    private func getItemsFlim() {
+        flimItems.forEach { item in
+            if item.iscomming {
+                flimNowItems.append(item)
+            } else {
+                flimCommingItems.append(item)
+            }
+        }
+    }
+
     private func configureCollectionView() {
         contentCollectionView.delegate = self
         contentCollectionView.dataSource = self
@@ -63,23 +81,22 @@ extension PlainViewController: UICollectionViewDelegateFlowLayout {
         let spacing: CGFloat = flowLayout.minimumInteritemSpacing
         let availableWidth = width - spacing * (numberOfItemsPerRow + 1)
         let itemDimension = floor(availableWidth / numberOfItemsPerRow)
-        return CGSize(width: itemDimension, height: 300)
+        return CGSize(width: itemDimension, height: collectionView.frame.size.height)
     }
 
 }
 
 extension PlainViewController: UICollectionViewDelegate {
-
 }
 
 extension PlainViewController: ContentHeaderDelegate {
     func changeDataNowContent(_ headerIndex: Int) {
-        model = getData.insertDataFlimNow()
+        model = flimNowItems
         self.headerIndex = headerIndex
         contentCollectionView.reloadData()
     }
     func changeDataComContent(_ headerIndex: Int) {
-        model = getData.insertDataFlimComing()
+        model = flimCommingItems
         self.headerIndex = headerIndex
         contentCollectionView.reloadData()
     }

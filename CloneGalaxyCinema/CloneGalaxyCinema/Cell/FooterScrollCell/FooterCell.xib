@@ -4,51 +4,67 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FooterCell" customModule="CloneGalaxyCinema" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="585" height="289"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="265"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="585" height="289"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="265"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anh" translatesAutoresizingMaskIntoConstraints="NO" id="Xas-IS-dFp">
-                        <rect key="frame" x="0.0" y="0.0" width="585" height="239"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ4-DP-I6m">
-                        <rect key="frame" x="0.0" y="239" width="585" height="50"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXC-fx-cRr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="265"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anh" translatesAutoresizingMaskIntoConstraints="NO" id="Xas-IS-dFp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZ4-DP-I6m">
+                                <rect key="frame" x="0.0" y="215" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6tE-oz-9k3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="m56-6I-aqF"/>
+                            <constraint firstAttribute="bottom" secondItem="hZ4-DP-I6m" secondAttribute="bottom" id="9LN-xZ-Uia"/>
+                            <constraint firstItem="hZ4-DP-I6m" firstAttribute="top" secondItem="Xas-IS-dFp" secondAttribute="bottom" id="FEh-Iu-s3U"/>
+                            <constraint firstItem="Xas-IS-dFp" firstAttribute="top" secondItem="xXC-fx-cRr" secondAttribute="top" id="IJl-sd-QDf"/>
+                            <constraint firstItem="hZ4-DP-I6m" firstAttribute="leading" secondItem="xXC-fx-cRr" secondAttribute="leading" id="JaM-1R-ZgK"/>
+                            <constraint firstAttribute="trailing" secondItem="Xas-IS-dFp" secondAttribute="trailing" id="QK9-KR-cNW"/>
+                            <constraint firstAttribute="trailing" secondItem="hZ4-DP-I6m" secondAttribute="trailing" id="U6g-zh-yV3"/>
+                            <constraint firstItem="Xas-IS-dFp" firstAttribute="leading" secondItem="xXC-fx-cRr" secondAttribute="leading" id="hQl-yC-K4R"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="hZ4-DP-I6m" firstAttribute="trailing" secondItem="Xas-IS-dFp" secondAttribute="trailing" id="5TY-Ay-KZh"/>
-                <constraint firstItem="Xas-IS-dFp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KAi-Nw-MMS"/>
-                <constraint firstAttribute="trailing" secondItem="Xas-IS-dFp" secondAttribute="trailing" id="KON-NX-CLB"/>
-                <constraint firstItem="Xas-IS-dFp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VeJ-r4-0nN"/>
-                <constraint firstItem="hZ4-DP-I6m" firstAttribute="leading" secondItem="Xas-IS-dFp" secondAttribute="leading" id="cAr-IV-Qlg"/>
-                <constraint firstItem="hZ4-DP-I6m" firstAttribute="top" secondItem="Xas-IS-dFp" secondAttribute="bottom" id="fTC-oD-kvw"/>
-                <constraint firstAttribute="bottom" secondItem="hZ4-DP-I6m" secondAttribute="bottom" id="x3s-Oa-Z37"/>
+                <constraint firstItem="xXC-fx-cRr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7x7-IM-xmb"/>
+                <constraint firstItem="xXC-fx-cRr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="E4A-OE-uCZ"/>
+                <constraint firstAttribute="trailing" secondItem="xXC-fx-cRr" secondAttribute="trailing" id="Fxz-Ks-4E8"/>
+                <constraint firstAttribute="bottom" secondItem="xXC-fx-cRr" secondAttribute="bottom" id="ZpS-8J-YYY"/>
             </constraints>
-            <size key="customSize" width="585" height="289"/>
+            <size key="customSize" width="320" height="265"/>
             <connections>
                 <outlet property="footerCellImageView" destination="Xas-IS-dFp" id="jNy-Nd-UxO"/>
                 <outlet property="footerTitleLb" destination="hZ4-DP-I6m" id="ZVU-Xh-0Ho"/>
             </connections>
-            <point key="canvasLocation" x="545.80152671755718" y="104.5774647887324"/>
+            <point key="canvasLocation" x="312.97709923664121" y="96.126760563380287"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="anh" width="300" height="168"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

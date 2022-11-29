@@ -12,7 +12,7 @@ protocol HeaderScrollFooterDelegate: AnyObject {
 }
 
 class ScrollFooter: UICollectionReusableView {
-    static let shared = ScrollFooter()
+
     static let identifier = "ScrollFooter"
     var timer: Timer?
     weak var delegate: HeaderScrollFooterDelegate?
@@ -20,9 +20,9 @@ class ScrollFooter: UICollectionReusableView {
     var currentNumberIndex = 0
     var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
-        pageControl.pageIndicatorTintColor = .link
+        pageControl.pageIndicatorTintColor = .gray
         pageControl.currentPageIndicatorTintColor = .black
-        pageControl.currentPage = 0
+        pageControl.currentPage = 10
         return pageControl
     }()
     override init(frame: CGRect) {
@@ -51,8 +51,8 @@ class ScrollFooter: UICollectionReusableView {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         pageControl.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         pageControl.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        pageControl.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
-        pageControl.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        pageControl.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        pageControl.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
 
     @objc func slideToNext() {

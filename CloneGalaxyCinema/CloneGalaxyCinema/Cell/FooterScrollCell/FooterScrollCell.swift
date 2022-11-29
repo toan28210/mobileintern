@@ -14,7 +14,7 @@ class FooterScrollCell: UICollectionViewCell {
     }
     var timer: Timer?
     var currentCellIndex = 0
-    var footerData: [SlideFooterData] = []
+    var footerItems: [SlideFooterDataModel] = []
     @IBOutlet weak var footerCollectionView: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +28,7 @@ class FooterScrollCell: UICollectionViewCell {
     }
 
     @objc func slideToNext() {
-        if currentCellIndex < footerData.count - 1 {
+        if currentCellIndex < footerItems.count - 1 {
             currentCellIndex += 1
         } else {
             currentCellIndex = 0
@@ -48,25 +48,23 @@ class FooterScrollCell: UICollectionViewCell {
         footerCollectionView.register(FooterCell.nib(), forCellWithReuseIdentifier: FooterCell.identifier)
     }
     private func createLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { (_, _) -> NSCollectionLayoutSection? in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                  heightDimension: .fractionalHeight(1.0))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let itemSpacing: CGFloat = 5
-            item.contentInsets = NSDirectionalEdgeInsets(top: itemSpacing,
-                                                         leading: itemSpacing,
-                                                         bottom: itemSpacing,
-                                                         trailing: itemSpacing)
-            let nestedGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.85),
-                                                         heightDimension: .fractionalWidth(0.7))
-            let nestedGroup = NSCollectionLayoutGroup.horizontal(layoutSize: nestedGroupSize,
-                                                                 subitems: [item])
-            // section
-            let section = NSCollectionLayoutSection(group: nestedGroup)
-            section.orthogonalScrollingBehavior = .groupPagingCentered
-            return section
-        }
-        // layout
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(330),
+                                              heightDimension: .absolute(250))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 8, bottom: 0, trailing: 8)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(330),
+                                               heightDimension: .absolute(250))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitems: [item])
+        let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .absolute(50.0))
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize,
+                                                                 elementKind: UICollectionView.elementKindSectionFooter,
+                                                                 alignment: .bottom)
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [footer]
+        section.orthogonalScrollingBehavior = .groupPagingCentered
+        let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
 }
@@ -74,7 +72,7 @@ class FooterScrollCell: UICollectionViewCell {
 extension FooterScrollCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return footerData.count
+        return footerItems.count
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -82,7 +80,7 @@ extension FooterScrollCell: UICollectionViewDelegate, UICollectionViewDataSource
                                                             for: indexPath) as? FooterCell else {
             fatalError()
         }
-        cell.configur(with: footerData[indexPath.row])
+        cell.configur(with: footerItems[indexPath.row])
         return cell
     }
 }
