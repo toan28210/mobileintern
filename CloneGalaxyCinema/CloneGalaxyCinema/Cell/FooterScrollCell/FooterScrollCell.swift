@@ -48,22 +48,17 @@ class FooterScrollCell: UICollectionViewCell {
         footerCollectionView.register(FooterCell.nib(), forCellWithReuseIdentifier: FooterCell.identifier)
     }
     private func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(330),
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(280),
                                               heightDimension: .absolute(250))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 8, bottom: 0, trailing: 8)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(330),
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 12, bottom: 0, trailing: 12)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(280),
                                                heightDimension: .absolute(250))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                        subitems: [item])
-        let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                      heightDimension: .absolute(50.0))
-        let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize,
-                                                                 elementKind: UICollectionView.elementKindSectionFooter,
-                                                                 alignment: .bottom)
         let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [footer]
-        section.orthogonalScrollingBehavior = .groupPagingCentered
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 4)
+        section.orthogonalScrollingBehavior = .continuous
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }

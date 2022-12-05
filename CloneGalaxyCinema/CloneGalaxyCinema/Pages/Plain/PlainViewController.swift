@@ -10,12 +10,11 @@ import UIKit
 class PlainViewController: UIViewController {
     @IBOutlet weak var contentCollectionView: UICollectionView!
     @IBOutlet weak var contentView: ContentHeader!
-    private let flimItems = Bundle.main.decode(
-        type: [FlimDataModel].self,
-        from: "DummyDataFlimJSON.json")
+    lazy var flimItems = [FlimDataModel]()
     private var flimNowItems: [FlimDataModel] = []
     private var flimCommingItems: [FlimDataModel] = []
-    lazy var model: [FlimDataModel] = []
+    lazy var models: [FlimDataModel] = []
+    lazy var idFlimClick = 0
 
     // Index Update UI Header Section
     lazy var headerIndex: Int = 0
@@ -36,6 +35,14 @@ class PlainViewController: UIViewController {
         configureCollectionView()
         configureButton()
         getItemsFlim()
+        getItemModels()
+    }
+    private func getItemModels() {
+        if headerIndex == 0 {
+            models = flimNowItems
+        } else {
+            models = flimCommingItems
+        }
     }
     private func getItemsFlim() {
         flimItems.forEach { item in
@@ -58,8 +65,9 @@ class PlainViewController: UIViewController {
     }
 }
 extension PlainViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.count
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return models.count
     }
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,7 +76,9 @@ extension PlainViewController: UICollectionViewDataSource {
             for: indexPath) as? ContentCell else {
             fatalError()
         }
-        cell.configure(data: model[indexPath.row])
+        cell.configure(data: models[indexPath.row])
+        cell.radioButton.isHidden = false
+        cell.delegate = self
         return cell
     }
 }
@@ -81,7 +91,7 @@ extension PlainViewController: UICollectionViewDelegateFlowLayout {
         let spacing: CGFloat = flowLayout.minimumInteritemSpacing
         let availableWidth = width - spacing * (numberOfItemsPerRow + 1)
         let itemDimension = floor(availableWidth / numberOfItemsPerRow)
-        return CGSize(width: itemDimension, height: collectionView.frame.size.height)
+        return CGSize(width: itemDimension, height: 300)
     }
 
 }
@@ -91,16 +101,35 @@ extension PlainViewController: UICollectionViewDelegate {
 
 extension PlainViewController: ContentHeaderDelegate {
     func changeDataNowContent(_ headerIndex: Int) {
-        model = flimNowItems
+        models = flimNowItems
         self.headerIndex = headerIndex
         contentCollectionView.reloadData()
     }
     func changeDataComContent(_ headerIndex: Int) {
-        model = flimCommingItems
+        models = flimCommingItems
         self.headerIndex = headerIndex
         contentCollectionView.reloadData()
     }
-    func dialog(_ view: UIView) {
+    func dialog() {
         print("321")
+    }
+}
+
+// MARK: - Content Cell Delegate Click Radio Button
+extension PlainViewController: ContentCellDelegate {
+    func test(_ id: Int) {
+        var count = 0
+        flimItems.forEach { item in
+            if item.id == id {
+                flimItems[count].showHome = true
+                let thisItem = flimItems[count]
+                flimItems[count] = flimItems[idFlimClick]
+                flimItems[idFlimClick] = thisItem
+                let home = HomeViewController()
+                home.flimItems = flimItems
+                self.navigationController?.pushViewController(home, animated: false)
+            }
+            count += 1
+        }
     }
 }

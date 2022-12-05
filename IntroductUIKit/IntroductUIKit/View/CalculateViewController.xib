@@ -70,17 +70,11 @@
                                                 <constraint firstAttribute="width" secondItem="Le6-t3-Og3" secondAttribute="height" multiplier="1:1" id="6Jh-FD-gqW"/>
                                             </constraints>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain">
+                                            <buttonConfiguration key="configuration" style="plain" title="AC">
                                                 <backgroundConfiguration key="background" cornerRadius="50">
                                                     <color key="backgroundColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </backgroundConfiguration>
-                                                <attributedString key="attributedTitle">
-                                                    <fragment content="AC">
-                                                        <attributes>
-                                                            <font key="NSFont" metaFont="system" size="35"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="36"/>
                                                 <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </buttonConfiguration>
                                             <connections>

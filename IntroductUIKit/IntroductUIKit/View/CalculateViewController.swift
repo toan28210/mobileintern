@@ -106,13 +106,12 @@ class CalculateViewController: UIViewController {
     func updateUIAC() {
         if displayValue != 0 {
             acBtn.setTitle("C", for: .normal)
-            addFont("C")
             
         } else {
             acBtn.setTitle("AC", for: .normal)
-            addFont("AC")
         }
-       
+        
+        acBtn.titleLabel?.font = .systemFont(ofSize: 80)
     }
     
     func updateLabel() {

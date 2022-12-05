@@ -9,7 +9,7 @@ import UIKit
 protocol ContentHeaderDelegate: AnyObject {
     func changeDataNowContent(_ headerIndex: Int)
     func changeDataComContent(_ headerIndex: Int)
-    func dialog(_ view: UIView)
+    func dialog()
 }
 protocol ContentHeaderDataSource: AnyObject {
     func dialogData() -> String
@@ -18,7 +18,6 @@ protocol ContentHeaderDataSource: AnyObject {
 class ContentHeader: UIView {
     weak var delegate: ContentHeaderDelegate?
     weak var datasource: ContentHeaderDataSource?
-    var dialog: Dialog!
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var comingBtn: UIButton!
     @IBOutlet weak var nowBtn: UIButton!
@@ -41,17 +40,20 @@ class ContentHeader: UIView {
     }
     func updateButtonUI() {
         if headerIndex == 0 {
-            nowBtn.tintColor = .link
-            comingBtn.tintColor = .gray
+            nowBtn.setTitleColor(.link, for: .normal)
+            nowBtn.titleLabel?.font = UIFont(name: "Helvetica", size: 18)
+            comingBtn.setTitleColor(.gray, for: .normal)
+            comingBtn.titleLabel?.font = UIFont(name: "Helvetica", size: 17)
         } else {
-            nowBtn.tintColor = .gray
-            comingBtn.tintColor = .link
+            nowBtn.setTitleColor(.gray, for: .normal)
+            nowBtn.titleLabel?.font = UIFont(name: "Helvetica", size: 17)
+            comingBtn.setTitleColor(.link, for: .normal)
+            comingBtn.titleLabel?.font = UIFont(name: "Helvetica", size: 18)
         }
     }
 
     @IBAction func handleLocation(_ sender: UIButton) {
-        let dialog = Dialog()
-        delegate?.dialog(dialog)
+        delegate?.dialog()
     }
     @IBAction func didTabButton(_ sender: UIButton) {
         if sender.tag == 0 {

@@ -21,50 +21,73 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-GQ-lHo">
-                    <rect key="frame" x="10" y="59" width="128" height="35"/>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buE-Uu-yXW">
+                    <rect key="frame" x="144" y="59" width="114" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="128" id="Zi0-w8-GIa"/>
+                        <constraint firstAttribute="width" constant="114" id="E11-NZ-oJc"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Now Showing"/>
-                    <connections>
-                        <action selector="didTabButton:" destination="-1" eventType="touchUpInside" id="pKZ-h5-QZr"/>
-                    </connections>
-                </button>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buE-Uu-yXW">
-                    <rect key="frame" x="138" y="59" width="126.66666666666669" height="35"/>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                     <color key="tintColor" systemColor="systemGray2Color"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Coming Soon"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Coming Soon">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                     <connections>
                         <action selector="didTabButton:" destination="-1" eventType="touchUpInside" id="kzx-cN-Eot"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ee-Q8-mLx">
-                    <rect key="frame" x="296.66666666666669" y="59" width="68.333333333333314" height="35"/>
+                    <rect key="frame" x="301" y="59" width="64" height="35"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="location" catalog="system" title="All"/>
+                    <buttonConfiguration key="configuration" style="plain" image="location" catalog="system" title="All">
+                        <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                    </buttonConfiguration>
                     <connections>
                         <action selector="handleLocation:" destination="-1" eventType="touchUpInside" id="SHL-Cg-yda"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="|" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-QY-t4d">
+                    <rect key="frame" x="132" y="59" width="4" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-GQ-lHo">
+                    <rect key="frame" x="10" y="59" width="114" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="114" id="vVM-XL-efz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Now Showing">
+                        <color key="titleColor" systemColor="linkColor"/>
+                    </state>
+                    <connections>
+                        <action selector="didTabButton:" destination="-1" eventType="touchUpInside" id="pKZ-h5-QZr"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="buE-Uu-yXW" firstAttribute="leading" secondItem="c7A-GQ-lHo" secondAttribute="trailing" id="45O-ef-3H1"/>
+                <constraint firstItem="8Fs-QY-t4d" firstAttribute="leading" secondItem="c7A-GQ-lHo" secondAttribute="trailing" constant="8" id="0cw-Nt-ieE"/>
                 <constraint firstItem="buE-Uu-yXW" firstAttribute="top" secondItem="c7A-GQ-lHo" secondAttribute="top" id="8eC-IG-esa"/>
+                <constraint firstItem="8Fs-QY-t4d" firstAttribute="height" secondItem="buE-Uu-yXW" secondAttribute="height" id="AQZ-BC-eTe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9ee-Q8-mLx" secondAttribute="trailing" constant="10" id="AXY-gY-ahs"/>
+                <constraint firstItem="buE-Uu-yXW" firstAttribute="leading" secondItem="8Fs-QY-t4d" secondAttribute="trailing" constant="8" id="OD4-uo-i3s"/>
                 <constraint firstItem="c7A-GQ-lHo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Xis-wv-gzJ"/>
                 <constraint firstItem="c7A-GQ-lHo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="eVT-lD-pJd"/>
                 <constraint firstItem="9ee-Q8-mLx" firstAttribute="top" secondItem="buE-Uu-yXW" secondAttribute="top" id="il0-RL-2YD"/>
+                <constraint firstItem="8Fs-QY-t4d" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="pEc-7b-MZb"/>
             </constraints>
             <point key="canvasLocation" x="220.61068702290075" y="32.394366197183103"/>
         </view>
     </objects>
     <resources>
         <image name="location" catalog="system" width="128" height="121"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

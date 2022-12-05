@@ -29,15 +29,19 @@ class ScrollCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         configureCollectionView()
         registerCollectionView()
-        let scrollFooter = ScrollFooter()
-        scrollFooter.delegate = self
+        setupCollectionViewLayout()
     }
     private func configureCollectionView() {
         scrollCollectionView.delegate = self
         scrollCollectionView.dataSource = self
-        scrollCollectionView.collectionViewLayout = createLayout()
     }
-
+    private func setupCollectionViewLayout() {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            scrollCollectionView.collectionViewLayout = createLayoutPad()
+        } else {
+            scrollCollectionView.collectionViewLayout = createLayout()
+        }
+    }
     private func registerCollectionView() {
         scrollCollectionView.register(ScrollHeaderCell.nib(), forCellWithReuseIdentifier: ScrollHeaderCell.identifier)
         scrollCollectionView.register(ScrollFooter.self,
@@ -45,12 +49,12 @@ class ScrollCollectionViewCell: UICollectionViewCell {
                                       withReuseIdentifier: ScrollFooter.identifier)
     }
     private func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(330),
-                                              heightDimension: .absolute(210))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(340),
+                                              heightDimension: .absolute(230))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 8, bottom: 0, trailing: 8)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(330),
-                                               heightDimension: .absolute(210))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(340),
+                                               heightDimension: .absolute(230))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                        subitems: [item])
         let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
@@ -59,8 +63,30 @@ class ScrollCollectionViewCell: UICollectionViewCell {
                                                                  elementKind: UICollectionView.elementKindSectionFooter,
                                                                  alignment: .bottom)
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 32, bottom: 0, trailing: 32)
         section.boundarySupplementaryItems = [footer]
-        section.orthogonalScrollingBehavior = .groupPagingCentered
+        section.orthogonalScrollingBehavior = .continuous
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+    private func createLayoutPad() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(500),
+                                              heightDimension: .absolute(400))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 8, bottom: 0, trailing: 8)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(500),
+                                               heightDimension: .absolute(400))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitems: [item])
+        let footerHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .absolute(50.0))
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerHeaderSize,
+                                                                 elementKind: UICollectionView.elementKindSectionFooter,
+                                                                 alignment: .bottom)
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 32, bottom: 0, trailing: 32)
+        section.boundarySupplementaryItems = [footer]
+        section.orthogonalScrollingBehavior = .continuous
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
@@ -103,9 +129,6 @@ extension ScrollCollectionViewCell: UICollectionViewDelegateFlowLayout,
         footerSlideHeader.delegate = self
         return footerSlideHeader
     }
-}
-
-extension ScrollCollectionViewCell {
 }
 
 extension ScrollCollectionViewCell: HeaderScrollFooterDelegate {

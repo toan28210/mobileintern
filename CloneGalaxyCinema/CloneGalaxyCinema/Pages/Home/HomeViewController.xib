@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hbK-EX-2N1">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A4g-lx-xDS">
                         <size key="itemSize" width="128" height="128"/>
@@ -33,10 +33,10 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="hbK-EX-2N1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GUN-Eg-78r"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hbK-EX-2N1" secondAttribute="bottom" id="Qt3-iT-2ed"/>
-                <constraint firstItem="hbK-EX-2N1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Z7G-zk-mzw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hbK-EX-2N1" secondAttribute="trailing" id="oQJ-bQ-Mra"/>
+                <constraint firstAttribute="trailing" secondItem="hbK-EX-2N1" secondAttribute="trailing" id="5Le-Gg-gcb"/>
+                <constraint firstAttribute="bottom" secondItem="hbK-EX-2N1" secondAttribute="bottom" constant="34" id="KPq-vg-lKK"/>
+                <constraint firstItem="hbK-EX-2N1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="uEv-9O-KeI"/>
+                <constraint firstItem="hbK-EX-2N1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zCb-MX-8IO"/>
             </constraints>
             <point key="canvasLocation" x="21" y="21"/>
         </view>

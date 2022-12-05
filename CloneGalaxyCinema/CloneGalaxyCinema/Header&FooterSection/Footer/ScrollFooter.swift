@@ -22,7 +22,6 @@ class ScrollFooter: UICollectionReusableView {
         let pageControl = UIPageControl()
         pageControl.pageIndicatorTintColor = .gray
         pageControl.currentPageIndicatorTintColor = .black
-        pageControl.currentPage = 10
         return pageControl
     }()
     override init(frame: CGRect) {

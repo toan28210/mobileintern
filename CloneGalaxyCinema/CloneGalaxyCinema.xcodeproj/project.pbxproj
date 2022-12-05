@@ -10,10 +10,7 @@
 		2F0CE26A292F0E8E006DD0FB /* FlimDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CE269292F0E8E006DD0FB /* FlimDataModel.swift */; };
 		2F0CE26C292F12BC006DD0FB /* SliderFooterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CE26B292F12BC006DD0FB /* SliderFooterDataModel.swift */; };
 		2F0CE26E292F136A006DD0FB /* SliderHeaderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CE26D292F136A006DD0FB /* SliderHeaderDataModel.swift */; };
-		2F4437BB2934461600333EDB /* DummyDataFlimJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F4437BA2934461600333EDB /* DummyDataFlimJSON.json */; };
 		2F4437BD29344B4B00333EDB /* ExtensionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4437BC29344B4B00333EDB /* ExtensionBundle.swift */; };
-		2F4437BF29346CE300333EDB /* DummyDataSlideHeaderJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F4437BE29346CE300333EDB /* DummyDataSlideHeaderJSON.json */; };
-		2F4437C129346D4400333EDB /* DummyDataSlideFooterJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F4437C029346D4400333EDB /* DummyDataSlideFooterJSON.json */; };
 		2F475B442924FD9700BE246F /* ScrollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B422924FD9700BE246F /* ScrollCollectionViewCell.swift */; };
 		2F475B452924FD9700BE246F /* ScrollCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F475B432924FD9700BE246F /* ScrollCollectionViewCell.xib */; };
 		2F475B4A29250A7B00BE246F /* ScrollHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B4829250A7B00BE246F /* ScrollHeaderCell.swift */; };
@@ -24,8 +21,6 @@
 		2F475B592925386B00BE246F /* HeaderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B582925386B00BE246F /* HeaderContent.swift */; };
 		2F531B8E2925EA0600E04BFB /* FooterConentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F531B8C2925EA0600E04BFB /* FooterConentView.swift */; };
 		2F531B8F2925EA0600E04BFB /* FooterConentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F531B8D2925EA0600E04BFB /* FooterConentView.xib */; };
-		2F785E9D292C81CC00DA3776 /* Dialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F785E9C292C81CC00DA3776 /* Dialog.xib */; };
-		2F785E9F292C81F000DA3776 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F785E9E292C81F000DA3776 /* Dialog.swift */; };
 		2F7925BA29272501004AB281 /* ContentFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7925B929272501004AB281 /* ContentFooter.xib */; };
 		2F7925BD292725CE004AB281 /* ContentFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7925BC292725CE004AB281 /* ContentFooter.swift */; };
 		2F92945A292B747F00E79106 /* ContentHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F929459292B747F00E79106 /* ContentHeader.xib */; };
@@ -44,6 +39,7 @@
 		2F9C83DA291E407700BF5602 /* MovieBlogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9C83D8291E407700BF5602 /* MovieBlogViewController.xib */; };
 		2F9C83DD291E409100BF5602 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C83DB291E409100BF5602 /* AccountViewController.swift */; };
 		2F9C83DE291E409100BF5602 /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F9C83DC291E409100BF5602 /* AccountViewController.xib */; };
+		2FB66CD22938A6E90017A7DC /* FlimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB66CD12938A6E90017A7DC /* FlimService.swift */; };
 		2FEDBCA0292B4CE5003D5D9A /* FooterScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEDBC9E292B4CE5003D5D9A /* FooterScrollCell.swift */; };
 		2FEDBCA1292B4CE5003D5D9A /* FooterScrollCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FEDBC9F292B4CE5003D5D9A /* FooterScrollCell.xib */; };
 		2FEDBCA6292B4EED003D5D9A /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEDBCA4292B4EED003D5D9A /* FooterCell.swift */; };
@@ -54,10 +50,7 @@
 		2F0CE269292F0E8E006DD0FB /* FlimDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlimDataModel.swift; sourceTree = "<group>"; };
 		2F0CE26B292F12BC006DD0FB /* SliderFooterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFooterDataModel.swift; sourceTree = "<group>"; };
 		2F0CE26D292F136A006DD0FB /* SliderHeaderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeaderDataModel.swift; sourceTree = "<group>"; };
-		2F4437BA2934461600333EDB /* DummyDataFlimJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DummyDataFlimJSON.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		2F4437BC29344B4B00333EDB /* ExtensionBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionBundle.swift; sourceTree = "<group>"; };
-		2F4437BE29346CE300333EDB /* DummyDataSlideHeaderJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DummyDataSlideHeaderJSON.json; sourceTree = "<group>"; };
-		2F4437C029346D4400333EDB /* DummyDataSlideFooterJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DummyDataSlideFooterJSON.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		2F475B422924FD9700BE246F /* ScrollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F475B432924FD9700BE246F /* ScrollCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F475B4829250A7B00BE246F /* ScrollHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollHeaderCell.swift; sourceTree = "<group>"; };
@@ -68,8 +61,6 @@
 		2F475B582925386B00BE246F /* HeaderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContent.swift; sourceTree = "<group>"; };
 		2F531B8C2925EA0600E04BFB /* FooterConentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterConentView.swift; sourceTree = "<group>"; };
 		2F531B8D2925EA0600E04BFB /* FooterConentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterConentView.xib; sourceTree = "<group>"; };
-		2F785E9C292C81CC00DA3776 /* Dialog.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Dialog.xib; sourceTree = "<group>"; };
-		2F785E9E292C81F000DA3776 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		2F7925B929272501004AB281 /* ContentFooter.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentFooter.xib; sourceTree = "<group>"; };
 		2F7925BC292725CE004AB281 /* ContentFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFooter.swift; sourceTree = "<group>"; };
 		2F929459292B747F00E79106 /* ContentHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentHeader.xib; sourceTree = "<group>"; };
@@ -90,6 +81,7 @@
 		2F9C83D8291E407700BF5602 /* MovieBlogViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieBlogViewController.xib; sourceTree = "<group>"; };
 		2F9C83DB291E409100BF5602 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		2F9C83DC291E409100BF5602 /* AccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		2FB66CD12938A6E90017A7DC /* FlimService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlimService.swift; sourceTree = "<group>"; };
 		2FEDBC9E292B4CE5003D5D9A /* FooterScrollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterScrollCell.swift; sourceTree = "<group>"; };
 		2FEDBC9F292B4CE5003D5D9A /* FooterScrollCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterScrollCell.xib; sourceTree = "<group>"; };
 		2FEDBCA4292B4EED003D5D9A /* FooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
@@ -107,14 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F0CE268292F0E73006DD0FB /* Model */ = {
+		2F0CE268292F0E73006DD0FB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2F0CE269292F0E8E006DD0FB /* FlimDataModel.swift */,
 				2F0CE26B292F12BC006DD0FB /* SliderFooterDataModel.swift */,
 				2F0CE26D292F136A006DD0FB /* SliderHeaderDataModel.swift */,
+				2FB66CD12938A6E90017A7DC /* FlimService.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2F0E39362927314300E05F52 /* ContentCell */ = {
@@ -162,16 +155,6 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
-		2F4437C229346E7A00333EDB /* DataJsons */ = {
-			isa = PBXGroup;
-			children = (
-				2F4437BA2934461600333EDB /* DummyDataFlimJSON.json */,
-				2F4437BE29346CE300333EDB /* DummyDataSlideHeaderJSON.json */,
-				2F4437C029346D4400333EDB /* DummyDataSlideFooterJSON.json */,
-			);
-			path = DataJsons;
-			sourceTree = "<group>";
-		};
 		2F475B4C29250FF100BE246F /* Footer */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				2FE8C4C02930A34E00D72869 /* Header&FooterSection */,
-				2F0CE268292F0E73006DD0FB /* Model */,
+				2F0CE268292F0E73006DD0FB /* Models */,
 				2FC90B632924B07C00875AC9 /* Delegate */,
 				2FD1FC492923696C00FD0CB6 /* Cell */,
 				2F9C83C4291E36C800BF5602 /* Assets.xcassets */,
@@ -221,7 +204,6 @@
 				2F9C83C9291E36C800BF5602 /* Info.plist */,
 				2FC90B602924B03B00875AC9 /* Pages */,
 				2FC90B612924B06000875AC9 /* Custom */,
-				2F4437C229346E7A00333EDB /* DataJsons */,
 			);
 			path = CloneGalaxyCinema;
 			sourceTree = "<group>";
@@ -246,8 +228,6 @@
 				2F7925BC292725CE004AB281 /* ContentFooter.swift */,
 				2F929459292B747F00E79106 /* ContentHeader.xib */,
 				2F92945B292B74F000E79106 /* ContentHeader.swift */,
-				2F785E9C292C81CC00DA3776 /* Dialog.xib */,
-				2F785E9E292C81F000DA3776 /* Dialog.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -372,14 +352,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F7925BA29272501004AB281 /* ContentFooter.xib in Resources */,
-				2F785E9D292C81CC00DA3776 /* Dialog.xib in Resources */,
-				2F4437BB2934461600333EDB /* DummyDataFlimJSON.json in Resources */,
 				2F475B452924FD9700BE246F /* ScrollCollectionViewCell.xib in Resources */,
 				2F475B5729252C5100BE246F /* ContentCell.xib in Resources */,
 				2F9C83C8291E36C800BF5602 /* LaunchScreen.storyboard in Resources */,
 				2F9C83DA291E407700BF5602 /* MovieBlogViewController.xib in Resources */,
-				2F4437C129346D4400333EDB /* DummyDataSlideFooterJSON.json in Resources */,
-				2F4437BF29346CE300333EDB /* DummyDataSlideHeaderJSON.json in Resources */,
 				2F9C83D6291E404F00BF5602 /* CinemaViewController.xib in Resources */,
 				2F9C83C5291E36C800BF5602 /* Assets.xcassets in Resources */,
 				2F9C83DE291E409100BF5602 /* AccountViewController.xib in Resources */,
@@ -431,13 +407,13 @@
 				2F475B4A29250A7B00BE246F /* ScrollHeaderCell.swift in Sources */,
 				2F9C83DD291E409100BF5602 /* AccountViewController.swift in Sources */,
 				2F475B592925386B00BE246F /* HeaderContent.swift in Sources */,
-				2F785E9F292C81F000DA3776 /* Dialog.swift in Sources */,
 				2F0CE26E292F136A006DD0FB /* SliderHeaderDataModel.swift in Sources */,
 				2FEDBCA6292B4EED003D5D9A /* FooterCell.swift in Sources */,
 				2F475B4E2925101E00BE246F /* ScrollFooter.swift in Sources */,
 				2F7925BD292725CE004AB281 /* ContentFooter.swift in Sources */,
 				2F9C83D5291E404F00BF5602 /* CinemaViewController.swift in Sources */,
 				2F9C83BE291E36C400BF5602 /* SceneDelegate.swift in Sources */,
+				2FB66CD22938A6E90017A7DC /* FlimService.swift in Sources */,
 				2F0CE26A292F0E8E006DD0FB /* FlimDataModel.swift in Sources */,
 				2F9C83D1291E371C00BF5602 /* HomeViewController.swift in Sources */,
 				2FEDBCA0292B4CE5003D5D9A /* FooterScrollCell.swift in Sources */,

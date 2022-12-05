@@ -144,7 +144,6 @@
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="changePass:" destination="-1" eventType="editingDidEnd" id="kos-VT-MlQ"/>
-                                                <action selector="togglePasswordView:" destination="TQC-N0-Kjw" eventType="editingDidEnd" id="HgA-CM-cke"/>
                                             </connections>
                                         </textField>
                                     </subviews>
