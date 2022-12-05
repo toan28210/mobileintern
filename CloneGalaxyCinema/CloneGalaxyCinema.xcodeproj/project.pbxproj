@@ -10,7 +10,6 @@
 		2F0CE26A292F0E8E006DD0FB /* FlimDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CE269292F0E8E006DD0FB /* FlimDataModel.swift */; };
 		2F0CE26C292F12BC006DD0FB /* SliderFooterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CE26B292F12BC006DD0FB /* SliderFooterDataModel.swift */; };
 		2F0CE26E292F136A006DD0FB /* SliderHeaderDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CE26D292F136A006DD0FB /* SliderHeaderDataModel.swift */; };
-		2F4437BD29344B4B00333EDB /* ExtensionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4437BC29344B4B00333EDB /* ExtensionBundle.swift */; };
 		2F475B442924FD9700BE246F /* ScrollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B422924FD9700BE246F /* ScrollCollectionViewCell.swift */; };
 		2F475B452924FD9700BE246F /* ScrollCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F475B432924FD9700BE246F /* ScrollCollectionViewCell.xib */; };
 		2F475B4A29250A7B00BE246F /* ScrollHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F475B4829250A7B00BE246F /* ScrollHeaderCell.swift */; };
@@ -50,7 +49,6 @@
 		2F0CE269292F0E8E006DD0FB /* FlimDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlimDataModel.swift; sourceTree = "<group>"; };
 		2F0CE26B292F12BC006DD0FB /* SliderFooterDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderFooterDataModel.swift; sourceTree = "<group>"; };
 		2F0CE26D292F136A006DD0FB /* SliderHeaderDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeaderDataModel.swift; sourceTree = "<group>"; };
-		2F4437BC29344B4B00333EDB /* ExtensionBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionBundle.swift; sourceTree = "<group>"; };
 		2F475B422924FD9700BE246F /* ScrollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F475B432924FD9700BE246F /* ScrollCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollCollectionViewCell.xib; sourceTree = "<group>"; };
 		2F475B4829250A7B00BE246F /* ScrollHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollHeaderCell.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 		2FC90B612924B06000875AC9 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				2F4437BC29344B4B00333EDB /* ExtensionBundle.swift */,
 				2F7925B929272501004AB281 /* ContentFooter.xib */,
 				2F7925BC292725CE004AB281 /* ContentFooter.swift */,
 				2F929459292B747F00E79106 /* ContentHeader.xib */,
@@ -398,7 +395,6 @@
 			files = (
 				2F9C83BC291E36C400BF5602 /* AppDelegate.swift in Sources */,
 				2F475B5629252C5100BE246F /* ContentCell.swift in Sources */,
-				2F4437BD29344B4B00333EDB /* ExtensionBundle.swift in Sources */,
 				2F531B8E2925EA0600E04BFB /* FooterConentView.swift in Sources */,
 				2F475B442924FD9700BE246F /* ScrollCollectionViewCell.swift in Sources */,
 				2F92945F292B779400E79106 /* PlainViewController.swift in Sources */,
@@ -485,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -539,7 +535,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

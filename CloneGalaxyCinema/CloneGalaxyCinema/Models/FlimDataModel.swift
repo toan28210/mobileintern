@@ -15,7 +15,13 @@ struct FlimDataModel: Codable {
     var limitAge: String
     var iscomming: Bool
     var showHome: Bool
-    init(id: Int, flimImage: String, flimName: String, evaluate: String, limitAge: String, iscomming: Bool, showHome: Bool) {
+    init(id: Int,
+         flimImage: String,
+         flimName: String,
+         evaluate: String,
+         limitAge: String,
+         iscomming: Bool,
+         showHome: Bool) {
         self.id = id
         self.flimImage = flimImage
         self.flimName = flimName
